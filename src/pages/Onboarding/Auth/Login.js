@@ -16,6 +16,7 @@ const Login = () => {
                 </Column>
                 <Column>
                    <div className="form-container">
+                    <div className="form-wrapper">
                     <form>
                         <div className="form-group">
                          <label>Email</label>   
@@ -48,6 +49,8 @@ const Login = () => {
                         <EyeOff color="#87859F" size={20} />
                         </div>
                     </form>
+                    </div>
+                    
                   
                    </div>
                     
