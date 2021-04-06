@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     margin-right: 0;
     margin-left: 0;
 
@@ -14,8 +14,8 @@
 
 .form-wrapper{
     background-color: #fff;
-    width: 80%;
-    padding: 3rem 3rem 3rem 3rem;
+    width: 100%;
+    padding: 3rem 3rem ;
     border-radius: .3rem;
     -webkit-border-radius: .3rem;
     -moz-border-radius: .3rem;
@@ -184,4 +184,21 @@ input[type=number] {
 
 .verify-code-content-wrapper .verify-icon-header{
     color: #0ab643 !important;
+}
+
+@media (max-width:600px){
+  .form-wrapper{
+    padding: 3rem 1rem;
+  }
+  .icon {
+    position: absolute;
+    right: 2rem;
+    top: 11.3rem;
+}
+.formControlOTP{
+  width: 30px;
+    height: 50px;
+    padding: .375rem .3rem;
+    font-size: 1rem;
+}
 }

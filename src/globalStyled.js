@@ -11,6 +11,7 @@ html,body{
     margin:0;
     -webkit-font-smoothing: antialiased;
     -moz-font-font-smoothing: grayscale;
+    
 }
 
 a{

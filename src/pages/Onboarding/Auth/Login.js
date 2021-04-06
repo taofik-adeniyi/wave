@@ -12,7 +12,7 @@ const Login = () => {
                 <Column>
                     <H3>Waavewallet</H3>
                     <H1>Log in to your account </H1>
-                    <P>To Buy and Sell crypto currency securely with <br />  wide ranges of features</P>
+                    <P>To Buy and Sell crypto currency securely with  wide ranges of features</P>
                 </Column>
                 <Column>
                    <div className="form-container">

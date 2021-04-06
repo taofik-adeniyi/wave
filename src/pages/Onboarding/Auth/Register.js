@@ -8,7 +8,7 @@ import './index.css'
 
 const Register = () => {
 
-  const [onboardingState, setOnboardingState] = useState(3)
+  const [onboardingState, setOnboardingState] = useState(2)
 
 
   const onBoard = ()=> { 
@@ -121,7 +121,7 @@ const Register = () => {
                      <H3 marginTop="1vh">Waavewallet</H3>
                    }
                     <H1>Create your account </H1>
-                    <P>To Buy and Sell crypto currency securely with <br />  wide ranges of features</P>
+                    <P>To Buy and Sell crypto currency securely with  wide ranges of features</P>
                 </Column>
                 <Column>
                    <div className="form-container">

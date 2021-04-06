@@ -9,6 +9,7 @@ export const Container = styled.div`
   min-height:100vh;
   background-color: #1A2841;
   color:#fff;
+  padding:0 1rem;
 `
 
 export const Row = styled.div`
@@ -18,7 +19,7 @@ export const Row = styled.div`
  align-items : ${(props) => props.value};
 
 @media (max-width: 768px){
-    min-width: 80%;
+    min-width: 100%;
     flex-direction: column;
 }
 `
@@ -32,7 +33,7 @@ width: 50% ;
 
 export const H1 = styled.h1`
 font-size:36px;
-line-height:24px;
+/* line-height:24px; */
 `
 
 export const H3 = styled.h3`
@@ -49,4 +50,9 @@ line-height: 24px;
 color: #EBECEE;
 margin-top:5vh;
 letter-spacing: .4px;
+width: 400px;
+
+@media(max-width:600px){
+    width:100%;
+}
 `
