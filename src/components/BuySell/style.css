@@ -7,3 +7,94 @@
     box-shadow: 0px 2px 11px rgba(8, 12, 47, 0.08);
     border-radius: 8px;
 }
+.drop-container {
+    position: absolute;
+    box-shadow: 0px 2px 4px rgba(8, 12, 47, 0.08);
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    padding: 15px 25px;
+    text-align: center;
+    margin: 5px 0 0 -5px;
+}
+.drop-container > div {
+    cursor: pointer;
+}
+sup {
+    font-weight: bold; 
+    font-size: 18px;  
+}
+sup + div {
+    font-size: 60px;  
+}
+.price-wrapper {
+    display: flex; margin-top: 20px; margin-bottom: 10px; justify-content: center;  padding: 10px; color: #D8DADD;
+}
+.price-color {
+    color: #1A2841;
+}
+.buy {
+        width: 50%;
+        display: flex;
+        background: #ffffff;
+        border-top: 2px solid transparent;
+        border-top-left-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 22px;
+    }
+    .clicked {
+        border-top: 2px solid blue;
+        color: blue;
+    }
+    .sell {
+        width: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: 8px;
+        font-weight: 600;
+        background: #F5F6F6;
+        padding: 22px;
+}
+.drop-show {
+        font-weight: 600;
+        color: #0059FF;
+        background-color: #F0F5FF;
+        border-radius: 36px;
+        padding: 8px;
+        align-items: center;
+        cursor: pointer;
+}
+.drop-wrapper {
+     margin-top: 10px;
+}
+.drupal {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.klose {
+        display: flex;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+}
+.balance {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 7% 10px 0;
+}
+.btn-buy {
+    width: 86%; margin: 5px 0 20px 0;
+}
+.data-list {
+        width: 86%;
+        height: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+}
+.bold {
+    font-weight: bold;
+}

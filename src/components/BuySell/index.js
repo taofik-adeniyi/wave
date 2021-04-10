@@ -1,95 +1,128 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import mark from "../../assets/icons/mark.png"
+import leftarrow from "../../assets/icons/leftarrow.png"
 
-const index = () => {
+const BuySell = () => {
+  const [drop, setdrop] = useState(false);
+  const [price, setprice] = useState(2);
+  const [buy, setbuy] = useState(1);
+  const [sell, setsell] = useState(0);
+  const [step, setstep] = useState(3)
+  const dropShow = () => {
+    setdrop(!drop);
+  };
+  const onBuy = () => {
+    setbuy(1);
+    setsell(0);
+  };
+  const onSell = () => {
+    setsell(1);
+    setbuy(0);
+  };
+  const setStep = () => {
+    setstep()
+  }
+  const Purchaser = ({title, amount, style}) => {
+    return (
+      <div  className={`${style && 'bold'}`} style={{justifyContent: 'space-between', display: 'flex'}}>
+              <div>{title}</div>
+              <div>{amount}</div>
+            </div>
+    )
+  }
+  const Back = () => {
+    return (
+      <div style={{display: 'flex', padding: '15px 0', justifyContent: 'flex-start'}}>
+        <img src={leftarrow} alt="left arrow" />
+        <div style={{marginLeft: '10px'}}>Back</div>
+      </div>
+    )
+  }
   return (
     <div className="buysell-wrapper">
-      <div
-        style={{
-          display: "flex",
-          borderTopRightRadius: "8px",
-          borderTopLeftRadius: "8px"
-        }}
-      >
-        <div
-          style={{
-            width: "50%",
-            display: "flex",
-            background: "#ffffff",
-            borderTopLeftRadius: "8px",
-            justifyContent: "center",
-            alignItems: "center",
-            borderTop: "2px solid blue",
-          }}
-        >
-          <div style={{ padding: "22px" }}>Buy</div>
+      {
+        step === 1 && 
+        <>
+        <div className="klose">
+        <div className={`buy ${buy > 0 && "clicked"} `}>
+          <div onClick={onBuy}>Buy</div>
         </div>
-        <div
-          style={{
-            width: "50%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            borderTopRightRadius: "8px",
-            background: "#F5F6F6",
-          }}
-        >
-          <div>Sell</div>
+        <div className={`sell ${sell > 0 && "clicked"}`}>
+          <div onClick={onSell}>Sell</div>
         </div>
       </div>
-      <div
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-        }}
-      >
-        <div style={{ marginTop: "10px" }}>
-          <div
-            style={{
-              fontWeight: 600,
-              color: "#0059FF",
-              backgroundColor: "#F0F5FF",
-              borderRadius: "36px",
-              padding: "8px",
-              alignItems: "center",
-            }}
-          >
+      <div className="drupal">
+        <div className="drop-wrapper">
+          <div className="drop-show" onClick={dropShow}>
             NGN &#8681;
           </div>
+          {drop && (
+            <div className="drop-container">
+              <div>BTC</div>
+              <hr />
+              <div>NGN</div>
+            </div>
+          )}
         </div>
-        {/* When above clicked below happen */}
-        {/* <div>
-            <div>NGN</div>
-            <div>USD</div>
-          </div> */}
-        {/* When above clicked below happen */}
-        
-        
       </div>
-      <div style={{display: 'flex', marginTop: '20px', marginBottom: '10px', justifyContent: 'center',  padding: '10px'}}>
-            <sup>NGN</sup>
-            <div style={{fontSize: '60px',  color: 'gray'}}> 0</div>
-          </div>
-          {/* <div>OR</div> */}
-      {/* <div style={{display: 'flex', justifyContent: 'center', fontSize: '24px', padding: '10px'}}>
-            <sup>NGN</sup>40,000
-          </div>
-          <div style={{display: 'flex', justifyContent: 'center'}}>0.000455 BTC</div> */}
-      <div style={{textAlign: 'center'}}>
-        <input style={{width: '86%', height: '30px', marginTop: '20px', marginBottom: '20px'}} type="text" list="cryptolist" placeholder="Bitcoin (Btc)" />
+      <div className={`price-wrapper ${price > 0 && "price-color"}`}>
+        <sup>NGN</sup>
+        <div>{price === 0 ? 0 : "40,000"}</div>
+      </div>
+      <div style={{ textAlign: "center" }}>
+        <input
+          className="data-list"
+          type="text"
+          list="cryptolist"
+          placeholder="Bitcoin (Btc)"
+        />
         <datalist id="cryptolist">
           <option value="Bitcoin (Btc)" />
           <option value="Ethereum (Eth)" />
           <option value="Tether (USDT)" />
         </datalist>
-        <div style={{display: 'flex', justifyContent: 'flex-end', margin: '0 7% 10px 0'}}>Balance: 400,000 NGN</div>
+        <div className="balance">Balance: 400,000 NGN</div>
         <div>
-          <button style={{width: '86%', margin: '5px 0 20px 0'}}>Buy</button>
+          <button className="btn-buy">Buy</button>
         </div>
       </div>
+      </>
+      }
+      {
+        step === 2 &&
+        <>
+          <div style={{paddingLeft: '20px', paddingRight: '20px'}}>
+            <div style={{display: 'flex', padding: '10px 20px'}}>Back</div>
+            <Back />
+            <div style={{textAlign: 'center'}}>
+            <div>You are buying</div>
+              <h2>0.0025 BTC</h2>
+            </div>
+            <Purchaser title="Purchaser" amount="N40,000"/>
+            <Purchaser title="Fee" amount="N100"/>
+            <Purchaser title="Total" amount="N39,900" style={true}/>
+            <button style={{width: '100%', marginTop: '20px', marginBottom: '20px'}}>Confirm</button>
+          </div>
+        </>
+      }
+      {
+        step ===3 &&
+        <div style={{textAlign: 'center', paddingLeft: '20px', paddingRight: '20px'}}>
+          <Back />
+          <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '120px'}}>
+          <img src={mark} alt="approved" />
+            </div>
+              <h2>Payment Succesfull</h2>
+            <div>
+              You have Succesfully bought
+              </div>
+              <div>0.00012BTC</div>
+              <button style={{width: '100%', marginTop: '20px', marginBottom: '20px'}}>Done</button>
+        </div>
+      }
     </div>
   );
 };
 
-export default index;
+export default BuySell;
