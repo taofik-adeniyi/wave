@@ -38,8 +38,8 @@ const Navbar = () => {
                         <NavItems>
                             <NavLinks to="/dashboard">Home</NavLinks>
                             <NavLinks to="/wallet">Wallet</NavLinks>
-                            <NavLinks to="/transactions">Transactions</NavLinks>
-                            <NavLinks to="/investments">Investments</NavLinks>
+                            <NavLinks to="/transaction">Transactions</NavLinks>
+                            <NavLinks to="/investment">Investments</NavLinks>
                            
                         </NavItems>
                       </NavMenu>

@@ -1,0 +1,28 @@
+ .menu {
+    display: flex;
+    align-items: center;
+    color: #898F99;
+    font-family:poppins;
+    font-size: .9rem;
+    text-decoration:none !important;
+   font-weight: 600 !important;
+   /* padding: 3px 3px; */
+   border-bottom:3px solid  transparent;
+   transition: all .2s ease-in-out;
+    padding:5px 1.5rem;
+    cursor:pointer;
+    height:100%;
+ }
+ .menu:active{
+    background-color:#0D182C;
+    color:#0059FF;
+ }
+ .menu:hover{
+    color: #898F99;
+    transition: all .2s ease-in-out;
+    /* background-color:#0D182C; */
+    /* color:#fff; */
+    border-bottom:3px solid  #0059FF;
+  
+
+}

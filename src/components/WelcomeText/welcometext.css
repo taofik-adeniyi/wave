@@ -1,0 +1,8 @@
+.welcome-text {
+    color: #1A2841;
+    display: flex;
+    line-height: 27px;
+    /* font-size: 18px; */
+    font-family: Poppins;
+    font-weight: 600;
+}

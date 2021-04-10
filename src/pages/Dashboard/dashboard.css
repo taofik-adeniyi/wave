@@ -1,0 +1,59 @@
+
+.grid-one {
+    display: grid;
+    gap: 0 20px;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "leftover  buysell"
+    "walletlist  buysell";
+}
+.grid-one-sub-one {
+    grid-area: leftover;
+}
+.grid-one-sub-two {
+    grid-area: buysell;
+}
+.grid-one-sub-three {
+    grid-area: walletlist;
+}
+.grid-one-sub-four {
+    grid-area: buysell;
+}
+
+@media only screen and(max-width: 375px) {
+    .grid-one {
+        grid-template-rows: 400px 400px 400px;
+        grid-template-areas:
+        "leftover"
+        "buysell"
+        "walletlist";
+    }
+}
+
+.grid-two {
+    display: grid;
+    gap: 0 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "recent crypto";
+    margin-top: 20px;
+}
+.grid-two-sub-one {
+    grid-area: recent;
+}
+.grid-two-sub-two {
+    grid-area: crypto;
+}
+
+@media only screen and (max-width: 375px) {
+    .grid-two {
+        grid-template-areas: 
+        "recent"
+        "crypto"
+        ;
+        grid-template-rows: 1fr 1fr;
+    }
+}

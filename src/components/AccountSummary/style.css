@@ -1,0 +1,20 @@
+.summary {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 60px 30px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 11px rgba(8, 12, 47, 0.08);
+    border-radius: 8px;
+}
+.balance {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.couple-buttons {
+    display: flex;
+    gap: 10px;
+    /* justify-content: space-between; */
+}
