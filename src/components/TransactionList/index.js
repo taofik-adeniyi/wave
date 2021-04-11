@@ -1,4 +1,5 @@
 import React from 'react'
+import Tag from '../Tag'
 import './style.css'
 
 const index = ({icon, tag, date, type, amount, symb}) => {
@@ -9,7 +10,7 @@ const index = ({icon, tag, date, type, amount, symb}) => {
             <div style={{marginLeft: '10px'}}>
             <div style={{display: 'flex'}}>
             <div>{type}</div>
-            <div style={{marginLeft: '10px', backgroundColor: '#E2FFEE', borderRadius: '4px', padding: '5px 15px', color: '#299C59', fontFamily: 'SF Pro Text', fontSize: '12px'}}>{tag}</div>
+            <Tag tag={tag} />
             </div>
             <div style={{display: 'flex'}}>{date}</div>
             </div>
