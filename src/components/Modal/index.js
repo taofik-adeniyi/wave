@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from 'prop-types';
 import Tag from "../Tag";
 import "./style.css";
 
@@ -67,4 +68,7 @@ const Modal = ({
   );
 };
 
+Modal.proptypes =  {
+    result: PropTypes.string
+}
 export default Modal;

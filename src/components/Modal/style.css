@@ -1,6 +1,5 @@
 .modal-cover {
-    background-color: #1A2841;
-    opacity: 0.8;
+  background: #1A2841CF;
   position: fixed;
   height: 100%;
   width: 100%;

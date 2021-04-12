@@ -107,7 +107,7 @@ const BuySell = () => {
         </>
       }
       {
-        step ===3 &&
+        step === 3 &&
         <div style={{textAlign: 'center', paddingLeft: '20px', paddingRight: '20px'}}>
           <Back />
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '120px'}}>
