@@ -10,7 +10,7 @@ import TransactionList from "../../components/TransactionList";
 import Modal from "../../components/Modal";
 
 const Transaction = () => {
-  const [step, setstep] = useState(3);
+  const [step, setstep] = useState(0);
   return (
     <div>
       <Menu />

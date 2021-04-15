@@ -8,7 +8,7 @@ const BuySell = () => {
   const [price, setprice] = useState(2);
   const [buy, setbuy] = useState(1);
   const [sell, setsell] = useState(0);
-  const [step, setstep] = useState(3)
+  const [step, setstep] = useState(1)
   const dropShow = () => {
     setdrop(!drop);
   };
