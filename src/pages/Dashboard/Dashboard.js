@@ -18,7 +18,7 @@ const Dashboard = () => {
         {/* <div className="grid-container"></div> */}
         <div className="grid-one">
           <div className="grid-one-sub-one">
-            <AccountSummary />
+            <AccountSummary title={'Your Naira Balance'} amount={'2,000,000'} />
           </div>
           <div className="grid-one-sub-two">
             <BuySell />
@@ -33,7 +33,9 @@ const Dashboard = () => {
 
         <div className="grid-two">
           <div className="grid-two-sub-one">
-            <RecentTransactions />
+            <RecentTransactions>
+            <div style={{display: 'flex', marginTop: '100px'}}>You have no activity yet</div> 
+            </RecentTransactions>
           </div>
           <div className="grid-two-sub-two">
             <RecentCrypto />

@@ -17,6 +17,7 @@
 .cancel {
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
 }
 .title {
     display: flex;

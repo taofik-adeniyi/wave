@@ -7,7 +7,7 @@ const Sender = () => {
   const [steper, setsteper] = useState(0);
   return (
     <div className="wrapper">
-      <h1>Sender</h1>
+      <div style={{color: '#1A2841', fontSize: '14px', fontWeight: 600, padding: '10px 0 15px 30px'}}>Send Bitcoin</div>
       <div className="address">
         <div>To Address</div>
         <div>To Wavewallet Account</div>

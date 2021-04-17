@@ -2,9 +2,9 @@ import React from "react";
 import './style.css'
 import naira from "../../assets/icons/naira.png";
 
-const index = ({currency, balance, icon, percent, sylp, nairaVal}) => {
+const index = ({currency, balance, icon, percent, sylp, nairaVal, clicked}) => {
   return (
-    <div className="wallet-card-wrapper">
+    <div className="wallet-card-wrapper" style={{cursor: 'pointer'}} onClick={clicked}>
       <div className="first-row">
         <div>
           <img src={icon} alt="naira logo" style={{borderRaius: '50%', backgroundColor: 'white'}} />

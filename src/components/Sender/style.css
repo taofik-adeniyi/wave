@@ -9,14 +9,19 @@ box-sizing: border-box;
 }
 .address {
     display: flex; 
-    border-bottom: 5px solid red; 
+    border-bottom: 5px solid #EBECEE; 
     padding-bottom: 10px; 
     padding-left: 30px;
     margin-bottom: 20px;
 }
+.address > div:nth-child(odd) {
+    color:  #0059FF;
+    font-weight: 600;
+    font-size: 16px;
+}
 .address > div:nth-child(even) {
     padding-left: 30px;
-    color: orangered;
+    color: #B1B4BB;
 }
 .info {
     display: flex; justify-content: center;
