@@ -1,0 +1,22 @@
+.step-two-wrapper-grid {
+    display: grid;
+    gap: 0 20px;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "leftover  buysell"
+    "walletlist  buysell";
+    /* background: blue; */
+}
+.step-two-wrapper-grid-one {
+    grid-area: leftover;
+}
+.step-two-wrapper-grid-two {
+    grid-area: buysell;
+}
+.step-three-wrapper-grid-three {
+    grid-area: walletlist;
+}
+.step-four-wrapper-grid-four {
+    grid-area: buysell
+}

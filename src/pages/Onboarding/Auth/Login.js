@@ -38,10 +38,10 @@ const Login = () => {
                         </div><br /> <br />
                         <div className="form-footer">
                            <div className="form-footer-text"> 
-                              <p> New user? <Link to='/register'>Create Account</Link></p>
+                              <p> New user? <Link to='/'>Create Account</Link></p>
                            </div>
                             <div className="btn">
-                            <button>Login</button>
+                            <Link to='/dashboard'><button>Login</button></Link>
                             </div>
                         </div>
                         <div className="icon">

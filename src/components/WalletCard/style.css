@@ -1,0 +1,15 @@
+.wallet-card-wrapper {
+        width: 45%;
+        min-height: 144px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        border: 1px solid #EBECEE;
+        padding: 10px 15px;
+}
+.first-row {
+    display: flex;
+    padding: 10px 0 10px 10px;
+    border-bottom: 1px solid gray;
+    justify-content: flex-start;
+    align-items: center;
+}

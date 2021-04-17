@@ -8,7 +8,7 @@ import './index.css'
 
 const Register = () => {
 
-  const [onboardingState, setOnboardingState] = useState(2)
+  const [onboardingState, setOnboardingState] = useState(1)
 
 
   const onBoard = ()=> { 
