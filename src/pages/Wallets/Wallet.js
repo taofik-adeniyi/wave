@@ -4,8 +4,7 @@ import EachWallet from "./EachWallet";
 import WalletCard from "../../components/WalletCard";
 import naira from "../../assets/icons/naira.png";
 import btc from "../../assets/icons/btc.png";
-import down from "../../assets/icons/down.png";
-import calender from "../../assets/icons/calender.png";
+
 import deposit from "../../assets/icons/deposit.png";
 import ethereum from "../../assets/icons/ethereum.png";
 import tether from "../../assets/icons/tether.png";
@@ -25,6 +24,10 @@ import TransactionList from "../../components/TransactionList";
 import AccountSummary from "../../components/AccountSummary/AccountSummary";
 import Modal from "../../components/Modal";
 import ToBuy from "../../components/ToBuy";
+import DateFilter from "../../components/DateFilter";
+import CreateRecurringBuy from "../../components/CreateRecurringBuy";
+import ConfirmRecurringBuy from "../../components/ConfirmRecurringBuy";
+import RecurringCreatedSuccess from "../../components/RecurringCreatedSuccess";
 
 const Wallet = () => {
   const [step, setstep] = useState(0);
@@ -32,38 +35,37 @@ const Wallet = () => {
   const [depowith, setdepowith] = useState(0)
   const [translist, settranslist] = useState('none')
   const [first, setfirst] = useState(0)
+  const [shrecurr, setshrecurr] = useState(false)
+  const [recusuccess, setrecusuccess] = useState(false)
+  const [confirmrecuuringbuy, setconfirmrecuuringbuy] = useState(false)
+  const [last, setlast] = useState(false)
+
+  const handleRecurringBuy = () => {
+    setshrecurr(!shrecurr)
+  }
+
   const showRecurring = () => {
     setstep(1);
   };
+
   const showCrypto = () => {
     setstep(2);
   };
+
   const showNaira = () => {
     setstep(3);
   };
+
   const moreInfo = () => {
     return (
-      <div
-        style={{
-          borderRadius: "8px",
-          backgroundColor: "#F5F6F6",
-          padding: "10px",
-          display: "flex",
-        }}
-      >
-        <div>
-          <img src={calender} alt="calender" />
-        </div>
-        <div style={{ margin: "0 10px" }}>23 -30 January, 2021</div>
-        <div>
-          <img src={down} alt="down key" />
-        </div>
-      </div>
+      <DateFilter />
     );
   };
+
   const deposit = () => {
     setdepowith(1)
   }
+
   const withdraw = () => {
     if (translist === 'none') {
       settranslist('empty')
@@ -72,10 +74,32 @@ const Wallet = () => {
     }
     setdepowith(2)
   }
+
   const closemodal = () => {
     setdepowith(0)
     settranslist(0)
   }
+
+  const confirm = () => {
+    setshrecurr(!shrecurr)
+    setconfirmrecuuringbuy(!confirmrecuuringbuy)
+  }
+
+  const showsuccess = () => {
+    setconfirmrecuuringbuy(!setconfirmrecuuringbuy)
+  }
+
+  const complete = () => {
+    setshrecurr(false)
+    setrecusuccess(false)
+    setconfirmrecuuringbuy(false)
+    setlast(false)
+  }
+
+  const showlast = () => {
+    setlast(true)
+  }
+
   return (
     <div>
       <Menu />
@@ -196,10 +220,40 @@ const Wallet = () => {
         </div>
       )}
       {step === 2 && (
+        
         <div className="step-two-wrapper">
-          <ToBuy />
+          <div style={{display: 'flex', justifyContent: 'flex-end', padding: '0 0 20px 0'}}>
+        <button
+          onClick={handleRecurringBuy}
+          style={{
+            cursor: 'pointer',
+            borderRadius: '8px', backgroundColor: '#FFFFFF', border: '1px solid #D8DADD', color: '#0059FF', fontSize: '13px'}}>
+          Create a recurring buy
+        </button>
+      </div>
+          <ToBuy  />
         </div>
       )}
+
+{
+            shrecurr && <Modal closemodal={closemodal} title={'Create recurring buy'}>
+              <CreateRecurringBuy confirm={confirm}  />
+            </Modal>
+          }
+
+          {
+            confirmrecuuringbuy &&
+            <Modal closemodal={closemodal}>
+              <ConfirmRecurringBuy showlast={showlast} />
+            </Modal>
+          }
+
+          {
+            last && <Modal closemodal={closemodal}>
+              <RecurringCreatedSuccess complete={complete} />
+            </Modal>
+          }
+
       {step === 3 && (
         <div className="step-three-wrapper">
           <AccountSummary title={"Naira Wallet"} amount={"18,000,908"} withdrawClick={withdraw} depositClick={deposit} />

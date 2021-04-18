@@ -5,7 +5,9 @@ const index = () => {
     return (
         <div>
             <Menu />
-            <h1>Investment</h1>
+            <div style={{width: '80%', margin: '40px auto'}}>
+                <h1>Investment</h1>
+            </div>
         </div>
     )
 }

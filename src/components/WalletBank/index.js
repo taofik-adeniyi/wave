@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import qrcode from "../../assets/icons/qrcode.png";
 import send from "../../assets/icons/send.png";
 import btc from "../../assets/icons/btc.png";
 import './style.css'
 
-const WalletBank = () => {
+const WalletBank = (props) => {
+  const { toggleBuy } = props
+
     return (
         <div className="first-compo">
         <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
@@ -24,9 +26,9 @@ const WalletBank = () => {
               </div>
               <div style={{paddingTop: '5px'}}>Send</div>
             </div>
-            <div className="boton not-checked" >
+            <div className="boton not-checked" style={{cursor: 'pointer'}} onClick={toggleBuy} >
               <div><img src={qrcode} alt="btc logo" /></div>
-              <div style={{paddingTop: '5px'}}>Receive</div>
+              <div style={{paddingTop: '5px'}} >Receive</div>
             </div>
         </div>
       </div>
