@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import Menu from "../../components/Menu";
 import "./style.css";
 import deposit from "../../assets/icons/deposit.png";
@@ -11,6 +13,7 @@ import Modal from "../../components/Modal";
 import NairaTransactionDetails from "../../components/NairaTransactionDetails";
 import BtcTransactionDetails from "../../components/BtcTransactionDetails";
 import WithdrawalTransactionDetails from "../../components/WithdrawalTransactionDetails";
+import DateFilter from "../../components/DateFilter";
 
 
 const Transaction = () => {
@@ -42,18 +45,11 @@ const Transaction = () => {
           }}
         >
           <h1>Transactions</h1>
-          <div
-            style={{
-              borderRadius: "8px",
-              backgroundColor: "gray",
-              padding: "10px",
-            }}
-          >
-            23 -30 January, 2021
-          </div>
+          <DateFilter />
         </div>
 
-        <div
+        <Tabs>
+        <TabList
           style={{
             borderBottom: "1px solid gray",
             display: "flex",
@@ -61,13 +57,16 @@ const Transaction = () => {
             marginBottom: "10px",
           }}
         >
-          <div className="menu">All</div>
-          <div className="menu">Naira</div>
-          <div className="menu">Bitcoin</div>
-          <div className="menu">Ethereum</div>
-          <div className="menu">Tether</div>
-        </div>
+          {/* <> */}
+          <Tab className="menu"><div >All</div></Tab>
+          <Tab className="menu"><div >Naira</div></Tab>
+          <Tab className="menu"><div >Bitcoin</div></Tab>
+          <Tab className="menu"><div >Ethereum</div></Tab>
+          <Tab className="menu"><div >Tether</div></Tab>
+          {/* </> */}
+        </TabList>
 
+        <TabPanel>
         <div onClick={showdeposit}>
         <TransactionList
           icon={deposit}
@@ -76,7 +75,6 @@ const Transaction = () => {
           type="Deposit"
           amount="900,908"
           symb="NGN"
-          
         />
         </div>
         <div onClick={showcrypto}>
@@ -100,6 +98,7 @@ const Transaction = () => {
         />
         </div>
         <div onClick={showcrypto}>
+
         <TransactionList
           icon={ethereum}
           tag="Successful"
@@ -109,16 +108,86 @@ const Transaction = () => {
           symb="NGN"
         />
         </div>
-        <div onClick={showwithdrawal}>
+        <div onClick={showdeposit}>
         <TransactionList
           icon={deposit}
           tag="Successful"
           date="14, jan, 2020"
-          type="Withdrawal"
+          type="Deposit"
           amount="900,908"
-          symb="ETH"
+          symb="NGN"
         />
         </div>
+        </TabPanel>
+        <TabPanel>
+        <div onClick={showdeposit}>
+        <TransactionList
+          icon={deposit}
+          tag="Successful"
+          date="14, jan, 2020"
+          type="Deposit"
+          amount="900,908"
+          symb="NGN"
+        />
+        </div>
+        <div onClick={showdeposit}>
+        <TransactionList
+          icon={deposit}
+          tag="failed"
+          date="14, jan, 2020"
+          type="Withdraw"
+          amount="900,908"
+          symb="NGN"
+        />
+        </div>
+        <div onClick={showdeposit}>
+        <TransactionList
+          icon={deposit}
+          tag="Successful"
+          date="14, jan, 2020"
+          type="Deposit"
+          amount="900,908"
+          symb="NGN"
+        />
+        </div>
+        </TabPanel>
+        <TabPanel>
+          <div onClick={showcrypto}>
+
+        <TransactionList
+          icon={btc}
+          tag="Successful"
+          date="14, jan, 2020"
+          type="Bought BTC"
+          amount="900,908"
+          symb="BTC"
+        />
+          </div>
+          <div onClick={showcrypto}>
+
+        <TransactionList
+          icon={btc}
+          tag="Successful"
+          date="14, jan, 2020"
+          type="Bought BTC"
+          amount="900,908"
+          symb="BTC"
+        />
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div onClick={showcrypto}>
+        <TransactionList
+          icon={ethereum}
+          tag="Successful"
+          date="14, jan, 2020"
+          type="Ethereum"
+          amount="900,908"
+          symb="NGN"
+        />
+          </div>
+        </TabPanel>
+        <TabPanel>
         <div
           style={{
             display: "flex",
@@ -139,6 +208,8 @@ const Transaction = () => {
           </div>
           <button style={{ marginTop: "20px" }}>Wallet</button>
         </div>
+        </TabPanel>
+        </Tabs>
       </div>
       {/* 1 significe fiat deposit */}
       {step === 1 && (
