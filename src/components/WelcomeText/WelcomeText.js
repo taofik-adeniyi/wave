@@ -1,7 +1,8 @@
-import React from 'react'
-import './welcometext.css'
+import React from "react";
+import "./welcometext.css";
 
-const WelcomeText = ({username}) =>  <h1 className="welcome-text">Welcome, {username} </h1>
- 
+const WelcomeText = ({ username }) => (
+  <h2 className="welcome-text">Welcome, {username} </h2>
+);
 
-export default WelcomeText
+export default WelcomeText;

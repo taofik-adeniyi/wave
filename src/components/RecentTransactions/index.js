@@ -1,4 +1,5 @@
 import React from "react";
+import SeeMore from "../SeeMore";
 import "./style.css"
 
 const index = (props) => {
@@ -6,13 +7,13 @@ const index = (props) => {
   return (
     <div className="recent-wrapper">
       <div className="recent-row">
-        <div>Recent Transactions</div>
+        <div style={{color: '#1A2841', fontSize: '14px', fontWeight: '600'}}>Recent Transactions</div>
         
         {
-          moreInfo ? moreInfo() : <div>See more &gt;</div>
+          moreInfo ? moreInfo() : <SeeMore />
         }
       </div>
-      <div style={{}}>
+      <div style={{display: 'flex', minHeight: '250px', justifyContent: 'center', alignItems: 'center', color: '#898F99', fontSize: '14px'}}>
          {
            children
          }

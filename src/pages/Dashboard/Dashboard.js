@@ -34,7 +34,7 @@ const Dashboard = () => {
         <div className="grid-two">
           <div className="grid-two-sub-one">
             <RecentTransactions>
-            <div style={{display: 'flex', marginTop: '100px'}}>You have no activity yet</div> 
+              <div>You have no activity yet</div>
             </RecentTransactions>
           </div>
           <div className="grid-two-sub-two">

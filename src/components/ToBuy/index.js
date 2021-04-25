@@ -33,8 +33,8 @@ const ToBuy = (props) => {
         </div>
         <div className="step-four-wrapper-grid-four"  style={{width: '94%', marginTop: '410px'}}>
           <RecentTransactions>
-              <div style={{display: "flex", alignItems: 'center', justifyContent: 'center', }}>
-                  <div style={{marginTop: '80px'}}>You have no activity yet</div>
+            <div style={{display: "flex", alignItems: 'center', justifyContent: 'center', }}>
+              <div style={{marginTop: '80px'}}>You have no activity yet</div>
             </div>
           </RecentTransactions>
         </div>
