@@ -2,21 +2,24 @@ import React from 'react'
 import Tag from '../Tag'
 import './style.css'
 
-const index = ({icon, tag, date, type, amount, symb}) => {
+const index = ({icon, tag, date, type, amount, symb, curr}) => {
     return (
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '20px 20px', cursor: 'pointer' }}>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '30px 20px', cursor: 'pointer' }}>
             <div style={{display: 'flex'}}>
                 <img src={icon} alt="deposit icon" />
             <div style={{marginLeft: '10px'}}>
             <div style={{display: 'flex'}}>
-            <div>{type}</div>
+            <div style={{fontWeight: 500, color: '#1A2841', fontSize: '16px'}}>{type}</div>
             <Tag tag={tag} />
             </div>
-            <div style={{display: 'flex'}}>{date}</div>
+            <div style={{display: 'flex', color: '#898F99', fontSize: '14px', textTransform: 'capitalize'}}>{date}</div>
             </div>
             </div>
 
-            <div>{amount} {symb}</div>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'flex-end'}}>
+                {curr && <div style={{marginBottom: '5px', fontWeight: 600, fontSize: '16px', color: '#1A2841'}}>{curr}</div>}
+                <div style={{color: '#898F99', fontSize: '14px'}} > {!curr ? <strong style={{fontSize: '16px', color: '#1A2841'}}>{amount} NGN</strong> : `${amount} NGN`} </div>
+            </div>
         </div>
     )
 }

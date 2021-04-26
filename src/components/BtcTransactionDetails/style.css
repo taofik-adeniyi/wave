@@ -1,0 +1,55 @@
+.samehere {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.typeoftrans {
+    color: #1A2841;
+    font-size: 16px;
+    font-family: "SF Pro Display";
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.logo {
+    display: flex;
+    margin-bottom: 30px;
+}
+.logo > img {
+    width: 56px;
+    height: 56px;
+    /* margin-top: 20px */
+}
+.date {
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #898F99;
+    /* font-family: "SF Pro Display"; */
+}
+.pricinghere {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1A2841;
+    font-family: "SF Pro Text";
+}
+.cryptohere {
+    /* margin: 10px 0; */
+    color: #898F99;
+    font-size: 13px;
+}
+.last-container {
+    margin: 30px 40px;
+}
+.bank-details {
+    display: flex; flex-direction: column; align-items: flex-end;
+}
+.bank-details > div {
+    padding: 0 0 15px 0;
+}
+.charge {
+    padding: 14px 0 14px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom:  1px solid gray;
+}

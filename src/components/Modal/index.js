@@ -8,17 +8,20 @@ import close from "../../assets/icons/cancel.png";
 const Modal = (props) => {
   const { title, cancel, children, closemodal } = props
   return ReactDOM.createPortal(
-    <div className="modal-cover">
-      <div className="modal">
+    <>
+    <div className="modal-cover" onClick={closemodal}>
+      
+    </div>
+    <div className="modal">
           <div className="cancel" onClick={closemodal}>
-            <img  src={close} alt="logog" />
+            <img style={{cursor: 'pointer'}} src={close} alt="logog" />
           </div>
         <div className="title">{title}</div>
        {
          children
        }
       </div>
-    </div>,
+    </>,
     document.querySelector("#modal-root")
   );
 };

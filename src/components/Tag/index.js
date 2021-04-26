@@ -11,6 +11,7 @@ const Tag = ({tag}) => {
         color: "#299C59",
         fontFamily: "SF Pro Text",
         fontSize: "12px",
+        fontWeight: 500,
       }}
     >
         {tag}
