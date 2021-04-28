@@ -4,7 +4,7 @@ import './style.css'
 
 const index = ({icon, tag, date, type, amount, symb, curr}) => {
     return (
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '30px 20px', cursor: 'pointer' }}>
+        <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0 0 40px 0', cursor: 'pointer' }}>
             <div style={{display: 'flex'}}>
                 <img src={icon} alt="deposit icon" />
             <div style={{marginLeft: '10px'}}>

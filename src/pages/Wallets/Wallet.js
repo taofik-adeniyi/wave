@@ -5,7 +5,7 @@ import WalletCard from "../../components/WalletCard";
 import naira from "../../assets/icons/naira.png";
 import btc from "../../assets/icons/btc.png";
 
-import deposit from "../../assets/icons/deposit.png";
+import depositimg from "../../assets/icons/deposit.png";
 import ethereum from "../../assets/icons/ethereum.png";
 import tether from "../../assets/icons/tether.png";
 import bank from "../../assets/icons/bank.png";
@@ -28,10 +28,12 @@ import DateFilter from "../../components/DateFilter";
 import CreateRecurringBuy from "../../components/CreateRecurringBuy";
 import ConfirmRecurringBuy from "../../components/ConfirmRecurringBuy";
 import RecurringCreatedSuccess from "../../components/RecurringCreatedSuccess";
+import redwithdrawal from "../../assets/icons/red-withdrawal.png";
+
 
 const Wallet = () => {
   const [step, setstep] = useState(0);
-  const [error, seterror] = useState(true);
+  const [theerror, settheerror] = useState(true);
   const [depowith, setdepowith] = useState(0)
   const [translist, settranslist] = useState('none')
   const [first, setfirst] = useState(0)
@@ -39,6 +41,12 @@ const Wallet = () => {
   const [recusuccess, setrecusuccess] = useState(false)
   const [confirmrecuuringbuy, setconfirmrecuuringbuy] = useState(false)
   const [last, setlast] = useState(false)
+  const [depositinput, setdepositinput] = useState('')
+  const [amountowithdraw, setamountowithdraw] = useState('')
+  const [accountnumber, setaccountnumber] = useState('')
+  const [bankaccount, setBankAccount] = useState(true)
+  const [cashout, setCashout] = useState('')
+  
 
   const handleRecurringBuy = () => {
     setshrecurr(!shrecurr)
@@ -67,12 +75,11 @@ const Wallet = () => {
   }
 
   const withdraw = () => {
-    if (translist === 'none') {
-      settranslist('empty')
-    }else if(translist === 'empty') {
-      settranslist('notempty')
+    if(bankaccount){
+      setdepowith(2)
+    }else {
+      setdepowith(3)
     }
-    setdepowith(2)
   }
 
   const closemodal = () => {
@@ -112,15 +119,15 @@ const Wallet = () => {
                 borderRadius: "8px",
                 width: "100%",
                 height: "168px",
-                color: "white",
+                
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <div>Combined Wallet Value</div>
-              <div>2,000,000 NGN</div>
+              <div style={{fontSize: '14px', color: "#8AC8E6"}}>Combined Wallet Value</div>
+              <div style={{color: '#FFFFFF', fontSize: '24px', fontWeight: 'bold', marginTop: '10px'}}>2,000,000 NGN</div>
             </div>
 
             <div
@@ -143,6 +150,7 @@ const Wallet = () => {
                     fontFamily: "SF Pro Text",
                     fontSize: "13px",
                     cursor: "pointer",
+                    fontWeight: 600
                   }}
                 >
                   Recuring buys
@@ -163,7 +171,7 @@ const Wallet = () => {
                 sylp="NGN"
                 icon={naira}
                 currency={"Naira"}
-                balance="115,050"
+                balance="115,050 NGN"
                 percent="+2.76%"
                 nairaVal="115,050"
                 clicked={showNaira}
@@ -172,7 +180,7 @@ const Wallet = () => {
                 sylp="BTC"
                 icon={btc}
                 currency={"Bitcoin"}
-                balance="2.48758"
+                balance="2.48758 BTC"
                 percent="+2.76%"
                 nairaVal="115,050"
                 clicked={showCrypto}
@@ -181,7 +189,7 @@ const Wallet = () => {
                 sylp="ETH"
                 icon={ethereum}
                 currency={"Ethereum"}
-                balance="14"
+                balance="14 ETH"
                 percent="+2.76%"
                 nairaVal="115,050"
                 clicked={showCrypto}
@@ -190,7 +198,7 @@ const Wallet = () => {
                 sylp="TET"
                 icon={tether}
                 currency={"Tether"}
-                balance="4,581"
+                balance="4,581 TET"
                 percent="+2.76%"
                 nairaVal="115,050"
                 clicked={showCrypto}
@@ -204,10 +212,10 @@ const Wallet = () => {
         <div className="step-one-wrapper">
           <div className="recurring">
             <div>
-              <h2>Recurring Buy</h2>
+              <div style={{fontSize: '24px', fontWeight: 600, color: '#1A2841'}}>Recurring Buy</div>
             </div>
             <div>
-              <button className="recurring-btn">Create a recurring buy</button>
+              <button className="btn-for-recurr" onClick={handleRecurringBuy}>Create a recurring buy</button>
             </div>
           </div>
 
@@ -235,7 +243,7 @@ const Wallet = () => {
         </div>
       )}
 
-{
+          {
             shrecurr && <Modal closemodal={closemodal} title={'Create recurring buy'}>
               <CreateRecurringBuy confirm={confirm}  />
             </Modal>
@@ -259,10 +267,10 @@ const Wallet = () => {
           <AccountSummary title={"Naira Wallet"} amount={"18,000,908"} withdrawClick={withdraw} depositClick={deposit} />
           <RecentTransactions moreInfo={moreInfo}>
             {
-              translist === 'notempty' && 
+              // translist === 'notempty' && 
               <div>
                 <TransactionList
-              icon={deposit}
+              icon={depositimg}
               tag="Successful"
               date="14, jan, 2020"
               type="Deposit"
@@ -270,7 +278,7 @@ const Wallet = () => {
               symb="NGN"
             />
             <TransactionList
-              icon={deposit}
+              icon={depositimg}
               tag="Successful"
               date="14, jan, 2020"
               type="Deposit"
@@ -278,8 +286,16 @@ const Wallet = () => {
               symb="NGN"
             />
             <TransactionList
-              icon={deposit}
+              icon={redwithdrawal}
               tag="Successful"
+              date="14, jan, 2020"
+              type="Withdrawal"
+              amount="900,908"
+              symb="NGN"
+            />
+            <TransactionList
+              icon={depositimg}
+              tag="failed"
               date="14, jan, 2020"
               type="Deposit"
               amount="900,908"
@@ -307,10 +323,11 @@ const Wallet = () => {
                 borderRadius: "5px",
                 marginBottom: "25px",
               }}
-              type="text"
+              type="number"
               placeholder="Enter amount to deposit"
-              value=""
+              value={depositinput}
               className="dinput"
+              onChange={(e) => setdepositinput(e.target.value)}
             />
             <PayCard
               master={mastercard}
@@ -325,34 +342,30 @@ const Wallet = () => {
         
 
           {
-            translist == 'notempty' &&
+            depowith == 2 &&
             <Modal closemodal={closemodal} title={'Withdraw'}>
               <div
             style={{
-              // width: "350px",
-              // border: "1px solid gray",
-              padding: "20px",
+              padding: "20px 20px 0 20px",
             }}
           >
-            <div style={{ textAlign: "center" }}>
+            <div style={{ 
+              textAlign: "center", 
+              fontSize: '14px', 
+              color: '#626977',
+              width: '80%', 
+              padding: '0 30px 20px 30px' }}>
               What bank account would you like to make your withdrawal to
             </div>
             <input
-              style={{
-                outline: "none",
-                width: "90%",
-                backgroundColor: "#F5F6F6",
-                border: "1px solid #EBECEE",
-                borderRadius: "5px",
-                marginBottom: "25px",
-              }}
-              type="text"
+              type="number"
               placeholder="Enter amount to withdraw"
-              value=""
-              className="dinput"
+              value={cashout}
+              className={`theeinput ${theerror ? 'classy-error' : null}`}
+              onChange={(e) => setCashout(e.target.value)}
             />
-            {error && (
-              <div style={{ color: "#ED2459", marginBottom: "10px" }}>
+            {theerror && (
+              <div style={{ fontSize: '14px', color: "#ED2459", marginBottom: "20px" }}>
                 You dont have that much in your wallet
               </div>
             )}
@@ -365,7 +378,7 @@ const Wallet = () => {
                 backgroundColor: "#F5F6F6",
                 border: "1px solid #EBECEE",
                 borderRadius: "5px",
-                marginBottom: "25px",
+                marginBottom: "15px",
               }}
             >
               <option>Select bank account</option>
@@ -373,21 +386,14 @@ const Wallet = () => {
               <option>Account two</option>
               <option>Account three</option>
             </select>
-            <div>
+            <div style={{fontSize: '14px', color: '#3B4455', marginBottom: '30px'}}>
               Can't find your bank account?{" "}
               <a href="#" target="_blank">
                 Add new account
               </a>
             </div>
             <div>
-              <button
-                
-                style={{
-                  backgroundColor: "#F5F6F6",
-                  width: "100%",
-                  color: "#D8DADD",
-                }}
-              >
+              <button className={`my-with-btn ${cashout.length > 0 ? 'btn-pointer' : null}`}>
                 Withdraw
               </button>
             </div>
@@ -397,15 +403,32 @@ const Wallet = () => {
 
 
           {
-            translist === 'empty' &&
+            // translist === 'empty' &&
+            depowith === 3 &&
             <Modal closemodal={closemodal} title={'Withdraw'}>
               <div
             style={{
-              // width: "350px",
-              // border: "1px solid gray",
+            
               padding: "20px",
             }}
           >
+            
+            <select style={{
+                outline: "none",
+                width: "100%",
+                height: "50px",
+                backgroundColor: "#F5F6F6",
+                border: "1px solid #EBECEE",
+                borderRadius: "5px",
+                marginBottom: "25px",
+                paddingRight: '20px',
+              }} className="dinput" >
+              <option value="Select bank account">Select bank account</option>
+              <option>GT Bank</option>
+              <option>Acsess</option>
+              <option>Zenith</option>
+              <option>FCMB</option>
+            </select>
             <input
               style={{
                 outline: "none",
@@ -415,23 +438,10 @@ const Wallet = () => {
                 borderRadius: "5px",
                 marginBottom: "25px",
               }}
-              type="text"
-              placeholder="Select bank account"
-              value=""
-              className="dinput"
-            />
-            <input
-              style={{
-                outline: "none",
-                width: "90%",
-                backgroundColor: "#F5F6F6",
-                border: "1px solid #EBECEE",
-                borderRadius: "5px",
-                marginBottom: "25px",
-              }}
-              type="text"
+              type="number"
               placeholder="Enter amount to withdraw"
-              value=""
+              value={amountowithdraw}
+              onChange={(e)=> setamountowithdraw(e.target.value)}
               className="dinput"
             />
             <input
@@ -443,14 +453,16 @@ const Wallet = () => {
                 borderRadius: "5px",
                 marginBottom: "25px",
               }}
-              type="text"
+              type="number"
               placeholder="Enter account number"
-              value=""
+              value={accountnumber}
+              onChange={(e) => setaccountnumber(e.target.value)}
               className="dinput"
+              maxLength="10"
             />
-            <input type="checkbox" checked />
+                  
+            <input type="checkbox" style={{marginBottom: "40px"}}/>
             <label>Add to beneficiary</label>
-            <div>
               <button
               onClick={()=> {
                 settranslist('empty')
@@ -464,18 +476,11 @@ const Wallet = () => {
               >
                 Withdraw
               </button>
-            </div>
           </div>
             </Modal>
           }
         </div>
       )}
-      {/* {
-          step === 4 && 
-          <div>
-
-          </div>
-        } */}
     </div>
   );
 };

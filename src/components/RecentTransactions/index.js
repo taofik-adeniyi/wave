@@ -13,7 +13,7 @@ const index = (props) => {
           moreInfo ? moreInfo() : <SeeMore />
         }
       </div>
-      <div style={{display: 'flex', minHeight: '250px', justifyContent: 'center', alignItems: 'center', color: '#898F99', fontSize: '14px'}}>
+      <div style={{minHeight: '410px', padding: '0 20px'}}>
          {
            children
          }

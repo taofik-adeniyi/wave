@@ -35,7 +35,29 @@
 }
 
 .step-three-wrapper {
-  width: 70%;
+  width: 60%;
   min-height: 450px;
   margin: 30px auto;
+}
+.theeinput {
+    outline: none;
+    width: 90%;
+    background-color: #F5F6F6;
+    border: 1px solid #EBECEE;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+}
+.classy-error {
+  background: #eccbd3;
+  border: 1px solid #ED2459;
+}
+.my-with-btn {
+    background-color: #F5F6F6;
+    width: 100%;
+    color: #D8DADD;
+}
+.btn-pointer {
+  cursor: pointer;
+  background-color: blue;
 }

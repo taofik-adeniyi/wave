@@ -7,8 +7,8 @@ const AccountSummary = ({title, amount, depositClick, withdrawClick}) => {
     return (
         <div className="summary">
             <div className="acc-summary">
-            <div style={{color: '#898F99', fontSize: '14px'}}> {title} </div>
-            <div style={{color: '#1A2841', fontWeight: 'bold', fontSize: '24px', marginTop: '10px'}}>{amount} NGN</div>
+            <div style={{color: '#3B4455', fontSize: '14px', fontWeight: 'normal', marginBottom: '8px'}}> {title} </div>
+            <div style={{color: '#1A2841', fontWeight: 'bold', fontSize: '24px'}}>{amount} NGN</div>
             </div>
             <div className="couple-buttons">
             <button onClick={depositClick} 

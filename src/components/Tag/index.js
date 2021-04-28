@@ -1,20 +1,10 @@
 import React from "react";
+import './style.css'
 
 const Tag = ({tag}) => {
   return (
-    <div
-      style={{
-        marginLeft: "10px",
-        backgroundColor: "#E2FFEE",
-        borderRadius: "4px",
-        padding: "5px 15px",
-        color: "#299C59",
-        fontFamily: "SF Pro Text",
-        fontSize: "12px",
-        fontWeight: 500,
-      }}
-    >
-        {tag}
+    <div className={`tag ${tag === 'failed' ? 'failed': 'success'}`}>
+      {tag}
     </div>
   );
 };
