@@ -265,46 +265,42 @@ const Wallet = () => {
       {step === 3 && (
         <div className="step-three-wrapper">
           <AccountSummary title={"Naira Wallet"} amount={"18,000,908"} withdrawClick={withdraw} depositClick={deposit} />
-          <RecentTransactions moreInfo={moreInfo}>
-            {
-              // translist === 'notempty' && 
-              <div>
-                <TransactionList
-              icon={depositimg}
-              tag="Successful"
-              date="14, jan, 2020"
-              type="Deposit"
-              amount="900,908"
-              symb="NGN"
-            />
+          <RecentTransactions moreInfo={moreInfo} others={()=> (
+            <div>
             <TransactionList
-              icon={depositimg}
-              tag="Successful"
-              date="14, jan, 2020"
-              type="Deposit"
-              amount="900,908"
-              symb="NGN"
-            />
-            <TransactionList
-              icon={redwithdrawal}
-              tag="Successful"
-              date="14, jan, 2020"
-              type="Withdrawal"
-              amount="900,908"
-              symb="NGN"
-            />
-            <TransactionList
-              icon={depositimg}
-              tag="failed"
-              date="14, jan, 2020"
-              type="Deposit"
-              amount="900,908"
-              symb="NGN"
-            />
-              </div>
-            }
-            
-          </RecentTransactions>
+          icon={depositimg}
+          tag="Successful"
+          date="14, jan, 2020"
+          type="Deposit"
+          amount="900,908"
+          symb="NGN"
+        />
+        <TransactionList
+          icon={depositimg}
+          tag="Successful"
+          date="14, jan, 2020"
+          type="Deposit"
+          amount="900,908"
+          symb="NGN"
+        />
+        <TransactionList
+          icon={redwithdrawal}
+          tag="Successful"
+          date="14, jan, 2020"
+          type="Withdrawal"
+          amount="900,908"
+          symb="NGN"
+        />
+        <TransactionList
+          icon={depositimg}
+          tag="failed"
+          date="14, jan, 2020"
+          type="Deposit"
+          amount="900,908"
+          symb="NGN"
+        />
+          </div>
+          )} />
           
           {
             depowith == 1 && 
@@ -373,7 +369,7 @@ const Wallet = () => {
               style={{
                 outline: "none",
                 width: "100%",
-                height: "40px",
+                height: "50px",
                 padding: "5px 10px",
                 backgroundColor: "#F5F6F6",
                 border: "1px solid #EBECEE",
