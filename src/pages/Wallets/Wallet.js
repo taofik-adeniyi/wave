@@ -88,6 +88,7 @@ const Wallet = () => {
   }
 
   const confirm = () => {
+    console.log('clicke on buysss');
     setshrecurr(!shrecurr)
     setconfirmrecuuringbuy(!confirmrecuuringbuy)
   }
@@ -104,6 +105,9 @@ const Wallet = () => {
   }
 
   const showlast = () => {
+    setshrecurr(false)
+    setrecusuccess(false)
+    setconfirmrecuuringbuy(false)
     setlast(true)
   }
 
@@ -251,7 +255,7 @@ const Wallet = () => {
 
           {
             confirmrecuuringbuy &&
-            <Modal closemodal={closemodal}>
+            <Modal closemodal={closemodal} title="Confirm Recurring Buy">
               <ConfirmRecurringBuy showlast={showlast} />
             </Modal>
           }
@@ -384,7 +388,7 @@ const Wallet = () => {
             </select>
             <div style={{fontSize: '14px', color: '#3B4455', marginBottom: '30px'}}>
               Can't find your bank account?{" "}
-              <a href="#" target="_blank">
+              <a href="#kio" target="_blank">
                 Add new account
               </a>
             </div>

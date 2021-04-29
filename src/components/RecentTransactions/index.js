@@ -14,13 +14,14 @@ const index = (props) => {
           moreInfo ? moreInfo() : <SeeMore />
         }
       </div>
-         <div className={`bg-height + ${smallheight ? 'small-height' : 'normal-height'}`}>lop
+         <div className={`bg-height + ${smallheight ? 'small-height' : 'normal-height'}`}>
             {children && 
               <div
-              style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0 20px'}}
-                
+              style={{display: 'flex', justifyContent: 'center', height: '90%', alignItems: 'center', padding: '0 20px'}}
                 >
+                <div>
                 {children}
+                </div>
               </div>
             }
             {others && <div>{others()}</div>}

@@ -9,6 +9,8 @@ import BuyCoin from "../BuyCoin"
 const Sender = (props) => {
   const [step, setstep] = useState(0);
   const [steper, setsteper] = useState(0);
+  const [btcaddress, setbtcaddress] = useState('');
+  const [theeamount, settheeamount] = useState('');
   const { buy, buysell, sendcoin, coinreceive } = props
 
   return (
@@ -49,7 +51,8 @@ const Sender = (props) => {
               <input
                 type="text"
                 placeholder="Enter Bitcoin address"
-                value=""
+                value={btcaddress}
+                onChange={(e) => setbtcaddress(e.target.value)}
                 id="address"
                 className="dinput"
               />
@@ -76,9 +79,10 @@ const Sender = (props) => {
                 )}
               </div>
               <input
-                type="text"
-                placeholder=""
-                value=""
+                type="number"
+                placeholder="Enter amount"
+                value={theeamount}
+                onChange={(e) => settheeamount(e.target.value)}
                 id="amount"
                 className="dinput"
               />
