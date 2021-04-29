@@ -21,3 +21,13 @@ border-radius: 8px;
 .top-space{
     margin-top: 30px;
 }
+.bg-height{
+    /* background: red; */
+    height: 270px;
+}
+.small-height {
+    height: 250px;
+}
+.normal-height {
+    max-height: 350px;
+}

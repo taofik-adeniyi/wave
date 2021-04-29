@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import "./style.css";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import 'react-tabs/style/react-tabs.css';
 import signal from "../../assets/icons/signal.png";
 import sock from "../../assets/icons/sock.png";
 import BuyCoin from "../BuyCoin"
@@ -9,36 +9,41 @@ import BuyCoin from "../BuyCoin"
 const Sender = (props) => {
   const [step, setstep] = useState(0);
   const [steper, setsteper] = useState(0);
-  const { buy, buysell } = props
+  const { buy, buysell, sendcoin, coinreceive } = props
 
   return (
     <>
     {
-      !buy ? <div className="wrapper">
-      <div style={{color: '#1A2841', fontSize: '14px', fontWeight: 600, padding: '10px 0 15px 30px'}}>Send Bitcoin</div>
+      sendcoin ? 
+      <div className="send-wrapper">
+      <div style={{color: '#1A2841', fontSize: '14px', fontWeight: 600, padding: '25px 0 15px 30px'}}>Send Bitcoin</div>
       <Tabs>
       <TabList className="address">
-        <Tab>To Address</Tab>
-        <Tab>To Wavewallet Account</Tab>
+        <Tab style={{color: '#0059FF', fontSize: '16px', fontWeight: 600, border: 'none',}}>To Address</Tab>
+        <Tab style={{color: '#B1B4BB', fontSize: '16px', fontWeight: 600, border: 'none',}}>To Wavewallet Account</Tab>
       </TabList>
       <TabPanel >
-        <div className="info">
+        <div className="infooo">
         You can send to any Bitcoin address
         </div>
       </TabPanel>
       
       <TabPanel>
-      <div className="info" style={{textAlign: 'center', padding: '0 40px'}}>You can choose to send to an email address or a phone number registered on Wavewallet</div>
-      <div style={{textAlign: 'center'}}>
-          <input type="radio" /><label>Email address</label>
-          <input type="radio" /><label>Phone number</label>
+      <div className="infooo"
+        style={{textAlign: 'center', padding: '0 40px'}}>
+          You can choose to send to an email address or a phone number registered on Wavewallet
+      </div>
+
+      <div style={{textAlign: 'center', display: 'flex', justifyContent: "center", alignItems: 'center'}}>
+          <div><input type="radio" /><label>Email address</label></div>
+          <div><input type="radio" /><label>Phone number</label></div>
       </div>
       </TabPanel>
       <div className="de-form">
         <form>
           <div>
             <div>
-              <label htmlFor="address">Address</label>
+              <label htmlFor="address">Address || Phone number</label>
             </div>
             <div>
               <input
@@ -85,9 +90,9 @@ const Sender = (props) => {
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: '-10px', marginBottom: '10px' }}>
             <div>{steper === 1 && "~34068.52 NGN"}</div>
-            <div>Send all</div>
+            <div style={{fontSize: '13px', color: '#0059FF', fontWeight: 600, marginBottom: '20px'}}>Send all</div>
           </div>
-          <div className="btn-wrapper" style={{marginBottom: '20px'}}>
+          <div className="btn-wrapper" style={{marginBottom: '100px'}}>
             <button style={{width: '100%'}}>Send</button>
           </div>
         </form>
@@ -97,11 +102,6 @@ const Sender = (props) => {
     </div> :
     <BuyCoin /> 
     }
-    
-      
-
-
-      
     </>
   );
 };

@@ -231,14 +231,14 @@ const Wallet = () => {
         
         <div className="step-two-wrapper">
           <div style={{display: 'flex', justifyContent: 'flex-end', padding: '0 0 20px 0'}}>
-        <button
-          onClick={handleRecurringBuy}
-          style={{
-            cursor: 'pointer',
-            borderRadius: '8px', backgroundColor: '#FFFFFF', border: '1px solid #D8DADD', color: '#0059FF', fontSize: '13px'}}>
-          Create a recurring buy
-        </button>
-      </div>
+            <button
+              onClick={handleRecurringBuy}
+              style={{
+                cursor: 'pointer',
+                borderRadius: '8px', padding: '10px 20px', minWidth: '190px', backgroundColor: '#FFFFFF', border: '1px solid #D8DADD', color: '#0059FF', fontSize: '13px'}}>
+              Create a recurring buy
+            </button>
+          </div>
           <ToBuy  />
         </div>
       )}

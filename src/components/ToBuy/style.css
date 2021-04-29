@@ -2,7 +2,7 @@
     display: grid;
     gap: 0 20px;
     grid-template-columns: 60% 40%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 180px 1fr;
     grid-template-areas: 
     "leftover  buysell"
     "walletlist  buysell";

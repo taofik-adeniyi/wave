@@ -1,0 +1,12 @@
+.receive-wrapper {
+    /* background: #F5F6F6; */
+    background-color: #FFFFFF;
+    width: 100%;
+/* margin-bottom: 20px; */
+border: 1px solid #EBECEE;
+box-sizing: border-box;
+
+/* Card */
+box-shadow: 0px 2px 4px rgba(8, 12, 47, 0.08);
+border-radius: 8px;
+}
