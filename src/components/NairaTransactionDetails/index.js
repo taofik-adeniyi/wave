@@ -1,5 +1,6 @@
 import React from 'react'
 import Tag from '../Tag'
+import './style.css'
 
 const NairaTransactionDetails = (props) => {
     const { 
@@ -14,9 +15,9 @@ const NairaTransactionDetails = (props) => {
         withdrawal,} = props
     return (
         <div>
-             <div className="same logo">
-        <img src={logo} alt="logog" />
-        </div>
+          <div className="same logo">
+            <img src={logo} alt="logog" />
+          </div>
         <div className="same typeoftrans">{typeOftrans}</div>
         <div className="same date">{date}</div>
         <div className="same pricing">

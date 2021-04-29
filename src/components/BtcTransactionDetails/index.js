@@ -1,6 +1,6 @@
 import React from 'react'
 import Tag from '../Tag'
-
+import './style.css'
 
 const BtcTransactionDetails = (props) => {
     const { 
@@ -15,20 +15,20 @@ const BtcTransactionDetails = (props) => {
         withdrawal,} = props
     return (
         <div>
-            <div className="same logo">
+            <div className="samehere logo">
         <img src={logo} alt="logog" />
         </div>
-        <div className="same typeoftrans">{typeOftrans}</div>
-        <div className="same date">{date}</div>
-        <div className="same pricing">
+        <div className="samehere typeoftrans">{typeOftrans}</div>
+        <div className="samehere date">{date}</div>
+        <div className="samehere pricinghere">
           <div>
             {amount} {symb}
           </div>
-          <div>
+          <div style={{marginBottom: '20px'}}>
             <Tag tag={result} />
           </div>
         </div>
-        {crypto && <div className="crypto same" >{fiatamount} NGN</div>}
+        {crypto && <div className="cryptohere samehere" style={{marginTop: '10px', marginBottom: '20px'}} >{fiatamount} NGN</div>}
         {withdrawal && (
           <div className="last-container">
             <div

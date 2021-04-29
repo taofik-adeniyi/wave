@@ -3,7 +3,7 @@
         min-height: 144px;
         border-radius: 8px;
         background-color: #ffffff;
-        border: 1px solid #EBECEE;
+        border: 1px solid #EEEDF2;
         padding: 10px 15px;
 }
 .first-row {
@@ -11,5 +11,18 @@
     padding: 10px 0 10px 10px;
     border-bottom: 1px solid gray;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    column-gap: 8px;
+    margin-bottom: 30px;
 }
+.btn-for-recurr {
+    background: #ffffff;
+    border: 1px solid #d8dadd;
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: #0059ff;
+    font-size: 13px;
+    font-weight: 600;
+    width: 210px;
+    cursor: pointer;
+  }

@@ -19,6 +19,7 @@ import DateFilter from "../../components/DateFilter";
 const Transaction = () => {
   const [step, setstep] = useState(0);
   const [modal, setmodal] = useState(false)
+  const [color, setColor] = useState(true)
   const closemodal = () => {
     setstep(0)
   }
@@ -42,30 +43,42 @@ const Transaction = () => {
             justifyContent: "space-between",
             alignItems: "center",
             padding: "5px 20px",
+            marginBottom: "20px"
           }}
         >
-          <h1>Transactions</h1>
+          <div style={{fontSize: '24px', color: '#1A2841', fontWeight: '600'}}>Your Transactions</div>
           <DateFilter />
         </div>
 
         <Tabs>
+          
         <TabList
           style={{
-            borderBottom: "1px solid gray",
+            borderBottom: "5px solid #E9E9ED",
             display: "flex",
             flexDirection: "row",
             marginBottom: "10px",
+            zIndex: 10
           }}
         >
           {/* <> */}
-          <Tab className="menu"><div >All</div></Tab>
+          <Tab className="menu" style={{color: '#0059FF'}}><div >All</div></Tab>
           <Tab className="menu"><div >Naira</div></Tab>
           <Tab className="menu"><div >Bitcoin</div></Tab>
           <Tab className="menu"><div >Ethereum</div></Tab>
           <Tab className="menu"><div >Tether</div></Tab>
           {/* </> */}
         </TabList>
-
+        {/* <div style={{
+            borderBottom: "3px solid red",
+            display: "flex",
+            flexDirection: "row",
+            marginBottom: "10px",
+            position: "absolute",
+            marginTop: "-40px",
+            height: "5px",
+            width: "80%",
+          }}></div> */}
         <TabPanel>
         <div onClick={showdeposit}>
         <TransactionList
@@ -79,42 +92,45 @@ const Transaction = () => {
         </div>
         <div onClick={showcrypto}>
         <TransactionList
-          icon={btc}
+          icon={deposit}
           tag="Successful"
           date="14, jan, 2020"
           type="Bought BTC"
-          amount="900,908"
+          amount="100,908,017"
           symb="BTC"
+          curr="0.047 BTC"
         />
         </div>
         <div onClick={showcrypto}>
         <TransactionList
-          icon={tether}
+          icon={deposit}
           tag="Successful"
           date="14, jan, 2020"
           type="Bought USDT"
-          amount="900,908"
+          amount="71,908"
           symb="USDT"
+          curr="567 USDT"
         />
         </div>
         <div onClick={showcrypto}>
 
         <TransactionList
-          icon={ethereum}
+          icon={deposit}
           tag="Successful"
           date="14, jan, 2020"
           type="Ethereum"
           amount="900,908"
           symb="NGN"
+          curr="1.43 ETH"
         />
         </div>
-        <div onClick={showdeposit}>
+        <div onClick={showwithdrawal}>
         <TransactionList
           icon={deposit}
           tag="Successful"
           date="14, jan, 2020"
-          type="Deposit"
-          amount="900,908"
+          type="Withdrawal"
+          amount="88,908"
           symb="NGN"
         />
         </div>
@@ -130,7 +146,7 @@ const Transaction = () => {
           symb="NGN"
         />
         </div>
-        <div onClick={showdeposit}>
+        <div onClick={showwithdrawal}>
         <TransactionList
           icon={deposit}
           tag="failed"
@@ -155,35 +171,38 @@ const Transaction = () => {
           <div onClick={showcrypto}>
 
         <TransactionList
-          icon={btc}
+          icon={deposit}
           tag="Successful"
           date="14, jan, 2020"
           type="Bought BTC"
           amount="900,908"
           symb="BTC"
+          curr="0.047 BTC"
         />
           </div>
           <div onClick={showcrypto}>
 
         <TransactionList
-          icon={btc}
+          icon={deposit}
           tag="Successful"
           date="14, jan, 2020"
           type="Bought BTC"
           amount="900,908"
           symb="BTC"
+          curr="0.047 BTC"
         />
           </div>
         </TabPanel>
         <TabPanel>
           <div onClick={showcrypto}>
         <TransactionList
-          icon={ethereum}
+          icon={deposit}
           tag="Successful"
           date="14, jan, 2020"
           type="Ethereum"
           amount="900,908"
           symb="NGN"
+          curr="1.43 ETH"
         />
           </div>
         </TabPanel>
@@ -206,7 +225,7 @@ const Transaction = () => {
           >
             You haven't done any transaction on Tether yet
           </div>
-          <button style={{ marginTop: "20px" }}>Wallet</button>
+          <button style={{ marginTop: "20px", cursor: "pointer", fontSize: '14px', fontWeight: "600", fontFamily: "SF Pro Text"}}>Wallet</button>
         </div>
         </TabPanel>
         </Tabs>
@@ -219,12 +238,12 @@ const Transaction = () => {
           closemodal={closemodal}
         >
           <NairaTransactionDetails 
-          logo={deposit}
-          typeOftrans="Naira Deposit"
-          date="14 Jan, 2021, 8:16PM"
-          result="Succesful"
-          amount="900,908"
-          symb="NGN" />
+            logo={deposit}
+            typeOftrans="Naira Deposit"
+            date="14 Jan, 2021, 8:16PM"
+            result="Succesful"
+            amount="900,908"
+            symb="NGN" />
         </Modal>
       )}
       {/* 2 significe crypto transaction */}
@@ -234,14 +253,16 @@ const Transaction = () => {
           title="Transaction Details"
           closemodal={closemodal}
         >
-          <BtcTransactionDetails  logo={btc}
-          typeOftrans="Bought BTC"
-          date="14 Jan, 2021, 8:16PM"
-          result="Succesful"
-          amount="0.047"
-          symb="BTC"
-          crypto
-          fiatamount="900,908"/>
+          <BtcTransactionDetails 
+            logo={btc}
+            typeOftrans="Bought BTC"
+            date="14 Jan, 2021, 8:16PM"
+            result="Succesful"
+            amount="0.047"
+            symb="BTC"
+            crypto
+            fiatamount="900,908"
+          />
         </Modal>
       )}
       {/* 3 significe fiat withdrawal */}

@@ -2,16 +2,17 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    min-height: 200px;
     padding: 60px 30px;
     background: #FFFFFF;
     box-sizing: border-box;
     box-shadow: 0px 2px 11px rgba(8, 12, 47, 0.08);
     border-radius: 8px;
 }
-.balance {
+.acc-summary {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .couple-buttons {
     display: flex;

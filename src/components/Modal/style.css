@@ -1,79 +1,42 @@
 .modal-cover {
-  background: #1A2841CF;
-  position: fixed;
-  height: 100%;
+    position: absolute;
+  height: 100vh;
   width: 100%;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #1A2841;
+  opacity: 0.8;
+  cursor: pointer;
 }
 .modal {
-    width: 457px; background-color: #FFFFFF; border: 1px solid gray; 
+    width: 30%; 
+    background-color: #FFFFFF; 
+    border: 1px solid gray; 
         padding: 20px;
         position: absolute;
+        /* top: 50px; */
+        margin: 130px 35% 0 35%;
 }
 .cancel {
     display: flex;
     justify-content: flex-end;
-    cursor: pointer;
+    margin-bottom: 30px;
 }
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: SF Pro Display;
+    font-family: "SF Pro Display";
     font-weight: 600;
     font-size: 18px;
     color: #1A2841;
-}
-.logo {
-    display: flex;
-    margin-top: 30px;
-}
-.logo > img {
-    width: 56px;
-    height: 56px;
-}
-.typeoftrans {
-    color: #1A2841;
-    font-size: 16px;
-    font-family: SF Pro Display;
-    margin-top: 20px;
-}
-.date {
-    margin-top: 15px;
-    color: #898F99;
-}
-.crypto {
-    margin: 20px 0;
-    color: #898F99;
-    font-size: 13px;
+    /* margin-bottom: 10px; */
 }
 
-.same {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pricing {
-    margin: 20px 0;
-    font-size: 24px;
-    font-weight: 600;
-}
-.last-container {
-    margin: 30px 40px;
-}
-.bank-details {
-    display: flex; flex-direction: column; align-items: flex-end;
-}
-.bank-details > div {
-    padding: 0 0 15px 0;
-}
-.charge {
-    padding: 14px 0 14px 0;
-        display: flex;
-        justify-content: space-between;
-        border-bottom:  1px solid gray;
-}
+
+
+
+

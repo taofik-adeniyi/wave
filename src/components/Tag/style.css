@@ -1,0 +1,17 @@
+.tag {
+    margin-left: 10px;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-family: SF Pro Text;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.failed {
+    color: #9C2953;
+    background-color: #FFE2ED;
+}
+.success {
+    color: #299C59;
+    background-color: #E2FFEE;
+}

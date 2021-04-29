@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const CreateRecurringBuy = (props) => {
+  const [nameofplan, setnameofplan] = useState('')
+  const [dcrypto, setdcrypto] = useState('')
+  const [amount, setamount] = useState('')
+  const [frequency, setfrequency] = useState('')
+  const [startdate, setstartdate] = useState('')
+  const [enddate, setenddate] = useState('')
     const { confirm  } = props
     return (
         <div>
@@ -17,7 +23,8 @@ const CreateRecurringBuy = (props) => {
           }}
           type="text"
           placeholder="Name of plan"
-          value=""
+          value={nameofplan}
+          onChange={(e) => setnameofplan(e.target.value)}
           className="dinput"
         />
         <input
@@ -29,9 +36,10 @@ const CreateRecurringBuy = (props) => {
             borderRadius: "5px",
             marginBottom: "25px",
           }}
-          type="text"
+          type="number"
           placeholder="BTC"
-          value=""
+          value={dcrypto}
+          onChange={(e) => setdcrypto(e.target.value)}
           className="dinput"
         />
         <input
@@ -43,9 +51,10 @@ const CreateRecurringBuy = (props) => {
             borderRadius: "5px",
             marginBottom: "25px",
           }}
-          type="text"
+          type="number"
           placeholder="Amount"
-          value=""
+          value={amount}
+          onChange={(e) => setamount(e.target.value)}
           className="dinput"
         />
         <input
@@ -59,7 +68,8 @@ const CreateRecurringBuy = (props) => {
           }}
           type="text"
           placeholder="Select saving frequency"
-          value=""
+          value={frequency}
+          onChange={(e) => setfrequency(e.target.value)}
           className="dinput"
         />
         <input
@@ -73,7 +83,8 @@ const CreateRecurringBuy = (props) => {
           }}
           type="text"
           placeholder="Start date"
-          value=""
+          value={startdate}
+          onChange={(e) => setstartdate(e.target.value)}
           className="dinput"
         />
         <input
@@ -87,7 +98,8 @@ const CreateRecurringBuy = (props) => {
           }}
           type="text"
           placeholder="End date"
-          value=""
+          value={enddate}
+          onChange={(e) => setenddate(e.target.value)}
           className="dinput"
         />
         <div>

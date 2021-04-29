@@ -7,10 +7,14 @@ const DateFilter = () => {
         <>
         <div
         style={{
-          borderRadius: "8px",
+          borderRadius: "5px",
           backgroundColor: "#F5F6F6",
           padding: "10px",
           display: "flex",
+          fontSize: '16px',
+          color: '#1A2841',
+          fontFamily: 'Proxima Nova',
+          cursor: 'pointer'
         }}
       >
         <div>

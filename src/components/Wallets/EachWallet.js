@@ -1,4 +1,5 @@
 import React from "react";
+import SeeMore from "../SeeMore";
 
 const EachWallet = () => {
   return (
@@ -81,7 +82,8 @@ const EachWallet = () => {
       <div>
         <div>
           <div>Recent Transactions</div>
-          <div>See more &gt;</div>
+          {/* <div>See more &gt;</div> */}
+          <SeeMore />
         </div>
         <div>You have no activity yet</div>
       </div>

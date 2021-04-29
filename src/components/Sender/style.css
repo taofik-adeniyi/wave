@@ -7,6 +7,20 @@ border-radius: 8px;
 border: 1px solid #F1F0FC;
 box-sizing: border-box;
 }
+
+.send-wrapper {
+    /* background: #F5F6F6; */
+    background-color: #FFFFFF;
+    width: 100%;
+/* margin-bottom: 20px; */
+border: 1px solid #EBECEE;
+box-sizing: border-box;
+
+/* Card */
+box-shadow: 0px 2px 4px rgba(8, 12, 47, 0.08);
+border-radius: 8px;
+}
+
 .address {
     display: flex; 
     border-bottom: 5px solid #EBECEE; 
@@ -23,13 +37,17 @@ box-sizing: border-box;
     padding-left: 30px;
     color: #B1B4BB;
 }
-.info {
-    display: flex; justify-content: center;
+.infooo {
+    display: flex; 
+    justify-content: center;
+    margin-top: 40px;
     margin-bottom: 30px;
+    color: #626977;
+    font-size: 13px;
 }
 .de-form {
     width: 70%;
-    margin: 0 auto;
+    margin: 45px auto;
 }
 .dtext {
     /* position: absolute; */
