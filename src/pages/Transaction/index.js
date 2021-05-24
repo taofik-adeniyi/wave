@@ -36,50 +36,23 @@ const Transaction = () => {
   return (
     <div>
       <Menu />
-      <div style={{ width: "80%", margin: "40px auto" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "5px 20px",
-            marginBottom: "20px"
-          }}
-        >
-          <div style={{fontSize: '24px', color: '#1A2841', fontWeight: '600'}}>Your Transactions</div>
+      <div className="transaction-cover">
+        <div className="row-card-one">
+          <div className="your-transactions">Your Transactions</div>
           <DateFilter />
         </div>
 
-        <Tabs>
+        <Tabs className="tabs-holder">
           
-        <TabList
-          style={{
-            borderBottom: "5px solid #E9E9ED",
-            display: "flex",
-            flexDirection: "row",
-            marginBottom: "10px",
-            zIndex: 10
-          }}
-        >
-          {/* <> */}
-          <Tab className="menu" style={{color: '#0059FF'}}><div >All</div></Tab>
-          <Tab className="menu"><div >Naira</div></Tab>
-          <Tab className="menu"><div >Bitcoin</div></Tab>
-          <Tab className="menu"><div >Ethereum</div></Tab>
-          <Tab className="menu"><div >Tether</div></Tab>
-          {/* </> */}
+        <TabList className="tabs-listing">
+          <Tab className="menu" style={{color: '#0059FF'}}>All</Tab>
+          <Tab className="menu">Naira</Tab>
+          <Tab className="menu">Bitcoin</Tab>
+          <Tab className="menu">Ethereum</Tab>
+          <Tab className="menu">Tether</Tab>
         </TabList>
-        {/* <div style={{
-            borderBottom: "3px solid red",
-            display: "flex",
-            flexDirection: "row",
-            marginBottom: "10px",
-            position: "absolute",
-            marginTop: "-40px",
-            height: "5px",
-            width: "80%",
-          }}></div> */}
-        <TabPanel>
+        
+        <TabPanel >
         <div onClick={showdeposit}>
         <TransactionList
           icon={deposit}

@@ -1,33 +1,76 @@
- .menu {
+.transaction-cover {
+   width: 80%;
+   margin: 40px auto;
+}
+@media only screen and (max-width: 768px) {
+   .transaction-cover {
+      width: 95%;
+      margin: 130px auto;
+   }
+}
+.row-card-one {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px 20px;
+   margin-bottom: 20px;
+   box-sizing: border-box;
+}
+@media only screen and (max-width: 768px) {
+   .row-card-one {
+      flex-direction: column;
+      gap: 20px;
+      justify-content: flex-start;
+      align-items: flex-start;
+   }
+}
+.your-transactions {
+   font-size: 24px; 
+   color: #1A2841; 
+   font-weight: 600
+}
+.tabs-holder {
+   margin-top: 50px;
+}
+.tabs-listing {
+   border-bottom: 5px solid #E9E9ED;
+   display: flex;
+   flex-direction: row;
+   z-index: 10;
+   width: 100%;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+.menu {
     display: flex;
-    align-items: center;
     color: #898F99;
     text-decoration:none !important;
-   font-weight: 600 !important;
-   font-size: 16px;
-   font-family: Proxima Nova;
-   border-bottom: 3px solid  transparent;
-   transition: all .2s ease-in-out;
-    padding:10px 1.5rem;
-    cursor:pointer;
-    height:100%;
- }
- /* .menu:active{
-    background-color:#0D182C;
-    color:#0059FF;
- } */
- /* .menu:focus {
-    color: #0059FF;
- }
- .menu:visited {
-    color: #0059FF;
- } */
- .menu:hover{
-    /* color: #898F99; */
+    font-weight: 600 !important;
+    font-size: 16px;
+    font-family: Proxima Nova;
+    border-bottom: 3px solid  transparent;
     transition: all .2s ease-in-out;
-    /* background-color:#0D182C; */
-    /* color:#fff; */
-    /* border-bottom:3px solid  #0059FF; */
-  
+    padding: 10px 1.5rem;
+    cursor: pointer;
+    box-sizing: border-box;
+ }
+ @media only screen and (max-width: 450px) {
+    .menu {
+       padding: 5px 0.9rem;
+    }
+ }
 
+ .menu:hover{
+    transition: all .2s ease-in-out;
+}
+.tabs-panelling {
+   width: 90%; 
+   margin: 0 auto;
+}
+@media only screen and (max-width: 768px) {
+   .tabs-panelling {
+      padding: 0 10px;
+   }
 }
