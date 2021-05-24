@@ -117,60 +117,21 @@ const Wallet = () => {
       {step === 0 && (
         <div className="step-zero-wrapper">
           <div>
-            <div
-              style={{
-                backgroundColor: "#163062",
-                borderRadius: "8px",
-                width: "100%",
-                height: "168px",
-                
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            <div className="card-one">
               <div style={{fontSize: '14px', color: "#8AC8E6"}}>Combined Wallet Value</div>
               <div style={{color: '#FFFFFF', fontSize: '24px', fontWeight: 'bold', marginTop: '10px'}}>2,000,000 NGN</div>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "30px",
-                alignItems: "center",
-              }}
-            >
+            <div className="card-two">
               <div>Wallets</div>
               <div>
-                <button
-                  onClick={showRecurring}
-                  style={{
-                    border: "1px solid #EBECEE",
-                    borderRadius: "8px",
-                    backgroundColor: "#ffffff",
-                    color: "#0059FF",
-                    fontFamily: "SF Pro Text",
-                    fontSize: "13px",
-                    cursor: "pointer",
-                    fontWeight: 600
-                  }}
-                >
+                <button onClick={showRecurring} className="btn-recurring">
                   Recuring buys
                 </button>
               </div>
             </div>
 
-            <div
-              style={{
-                width: "100%",
-                marginTop: "30px",
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "25px 10px",
-              }}
-            >
+            <div className="card-wrapper">
               <WalletCard
                 sylp="NGN"
                 icon={naira}

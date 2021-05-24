@@ -1,10 +1,16 @@
 .wallet-card-wrapper {
-        width: 45%;
-        min-height: 144px;
-        border-radius: 8px;
-        background-color: #ffffff;
-        border: 1px solid #EEEDF2;
-        padding: 10px 15px;
+    width: 45%;
+    min-height: 144px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #EEEDF2;
+    padding: 10px 15px;
+}
+@media only screen and (max-width: 768px) {
+    .wallet-card-wrapper {
+        width: 100%;
+        margin: 10px auto;
+    }
 }
 .first-row {
     display: flex;
