@@ -11,12 +11,19 @@ const BuySell = () => {
   const [buy, setbuy] = useState(1);
   const [sell, setsell] = useState(0);
   const [step, setstep] = useState(1)
-  const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState(1)
   const dropShow = () => {
     setdrop(!drop);
   };
   const handleToggle = () => {
-    setToggle(!toggle);
+    setToggle(1);
+  }
+  const handleBuy = () => {
+    setToggle(2);
+  }
+  const handleSell = () => {
+    setToggle(!false);
+    console.log('>>>>>>>>', toggle);
   }
   const onBuy = () => {
     setbuy(1);
@@ -51,10 +58,10 @@ const BuySell = () => {
         step === 1 && 
         <>
         <div className="klose">
-        <div onClick={handleToggle} className={`buy ${!toggle && "clicked"} `}>
+        <div onClick={handleToggle} className={`buy ${toggle === 1 && "clicked"} `}>
           <div>Buy</div>
         </div>
-        <div onClick={handleToggle} className={`sell ${toggle && "clicked"}`}>
+        <div onClick={handleBuy} className={`sell ${toggle === 2 && "clicked"}`}>
           <div>Sell</div>
         </div>
       </div>

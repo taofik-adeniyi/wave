@@ -23,9 +23,8 @@ const ToBuy = (props) => {
   }
 
   return (
-    <div>
-      
-      <div className="step-two-wrapper-grid">
+    <>
+      {/* <div className="step-two-wrapper-grid">
         <div className="step-two-wrapper-grid-one">
           <WalletBank toggleReceive={toggleReceive} toggleSend={toggleSend} sendcoin={sendcoin} coinreceive={coinreceive} />
         </div>
@@ -36,7 +35,7 @@ const ToBuy = (props) => {
         </div>
         <div className="step-three-wrapper-grid-three">
           <Sender coinreceive={coinreceive} sendcoin={sendcoin} buy={buy} setbuy={setbuy} />
-          {/* <SenderTwo /> */}
+          <SenderTwo />
         </div>
         <div className="step-four-wrapper-grid-four"  style={{width: '94%', marginTop: '460px'}}>
           <RecentTransactions smallheight>
@@ -45,8 +44,37 @@ const ToBuy = (props) => {
             </div>
           </RecentTransactions>
         </div>
+      </div> */}
+      <div className="container">
+        <div className="one">
+          <div className="step-two-wrapper-grid-one">
+          <WalletBank toggleReceive={toggleReceive} toggleSend={toggleSend} sendcoin={sendcoin} coinreceive={coinreceive} />
+        </div>
+        </div>
+        <div className="two">
+          <div className="step-two-wrapper-grid-two the-buy-sell" >
+          <BuySell>
+            <div>Activate Recurring Buy</div>
+          </BuySell>
+        </div>
+        </div>
+        <div className="three">
+          <div className="step-three-wrapper-grid-three">
+          <Sender coinreceive={coinreceive} sendcoin={sendcoin} buy={buy} setbuy={setbuy} />
+          {/* <SenderTwo /> */}
+        </div>
+        </div>
+        <div className="four">
+        <div className="step-four-wrapper-grid-four"  className="step-now">
+          <RecentTransactions smallheight>
+            <div style={{display: "flex", alignItems: 'center', justifyContent: 'center', }}>
+              <div>You have no activity yet</div>
+            </div>
+          </RecentTransactions>
+        </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

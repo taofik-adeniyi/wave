@@ -101,17 +101,28 @@
   width: 70%;
   margin: 50px auto;
 }
+.step-two-box-one {
+  display: flex; 
+  justify-content: flex-end; 
+    padding: 0 0 20px 0;
+}
+@media only screen and (max-width: 768px) {
+  .step-two-wrapper {
+    margin: 50px auto;
+    width: 90%;
+  }
+}
 
 .step-three-wrapper {
   width: 60%;
-  min-height: 450px;
+  /* min-height: 450px; */
   margin: 50px auto;
   /* background-color: red; */
 }
 @media only screen and (max-width: 768px) {
   .step-three-wrapper {
     width: 90%;
-    margin: 130px auto;
+    /* margin: 130px auto; */
   /* background-color: blue; */
   }
 }
@@ -136,4 +147,19 @@
 .btn-pointer {
   cursor: pointer;
   background-color: blue;
+}
+.creator {
+    cursor: pointer; 
+    border-radius: 8px; 
+    padding: 10px 20px;
+    min-width: 190px; 
+    background-color: #FFFFFF; 
+    border: 1px solid #D8DADD;
+    color: #0059FF;
+    font-size: 13px;
+  }
+@media only screen and (max-width: 768px) {
+  .creator {
+    margin-top: 60px;
+  }
 }

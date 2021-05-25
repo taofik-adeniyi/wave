@@ -30,6 +30,7 @@ import ConfirmRecurringBuy from "../../components/ConfirmRecurringBuy";
 import RecurringCreatedSuccess from "../../components/RecurringCreatedSuccess";
 import redwithdrawal from "../../assets/icons/red-withdrawal.png";
 import RecurringList from "../../components/RecurringList";
+import AccountSummaryTwo from "../../components/AccountSummaryTwo";
 
 
 const Wallet = () => {
@@ -180,12 +181,8 @@ const Wallet = () => {
       {step === 2 && (
         
         <div className="step-two-wrapper">
-          <div style={{display: 'flex', justifyContent: 'flex-end', padding: '0 0 20px 0'}}>
-            <button
-              onClick={handleRecurringBuy}
-              style={{
-                cursor: 'pointer',
-                borderRadius: '8px', padding: '10px 20px', minWidth: '190px', backgroundColor: '#FFFFFF', border: '1px solid #D8DADD', color: '#0059FF', fontSize: '13px'}}>
+          <div className="step-two-box-one">
+            <button onClick={handleRecurringBuy} className="creator">
               Create a recurring buy
             </button>
           </div>
@@ -214,77 +211,80 @@ const Wallet = () => {
 
       {step === 3 && (
         <div className="step-three-wrapper">
-          <AccountSummary title={"Naira Wallet"} amount={"18,000,908"} withdrawClick={withdraw} depositClick={deposit} />
-          <RecentTransactions moreInfo={moreInfo} others={()=> (
-            <div>
+          <AccountSummaryTwo
+            title={"Naira Wallet"} 
+            amount={"18,000,908"}
+            withdrawClick={withdraw} 
+            depositClick={deposit} 
+          />
+          <RecentTransactions 
+            moreInfo={moreInfo} 
+            others={()=> (
+            <>
             <TransactionList
-          icon={depositimg}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Deposit"
-          amount="900,908"
-          symb="NGN"
-        />
-        <TransactionList
-          icon={depositimg}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Deposit"
-          amount="900,908"
-          symb="NGN"
-        />
-        <TransactionList
-          icon={redwithdrawal}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Withdrawal"
-          amount="900,908"
-          symb="NGN"
-        />
-        <TransactionList
-          icon={depositimg}
-          tag="failed"
-          date="14, jan, 2020"
-          type="Deposit"
-          amount="900,908"
-          symb="NGN"
-        />
-          </div>
+              icon={depositimg}
+              tag="Successful"
+              date="14, jan, 2020"
+              type="Deposit"
+              amount="900,908"
+              symb="NGN"
+            />
+            <TransactionList
+              icon={depositimg}
+              tag="Successful"
+              date="14, jan, 2020"
+              type="Deposit"
+              amount="900,908"
+              symb="NGN"
+            />
+            <TransactionList
+              icon={redwithdrawal}
+              tag="Successful"
+              date="14, jan, 2020"
+              type="Withdrawal"
+              amount="900,908"
+              symb="NGN"
+            />
+            <TransactionList
+              icon={depositimg}
+              tag="failed"
+              date="14, jan, 2020"
+              type="Deposit"
+              amount="900,908"
+              symb="NGN"
+            />
+          </>
           )} />
           
           {
             depowith == 1 && 
             <Modal closemodal={closemodal} title={'Deposit'}>
-        <div
-            style={{
-              padding: "20px",
-            }}
-          >
-            <input
-              style={{
-                outline: "none",
-                width: "90%",
-                backgroundColor: "#F5F6F6",
-                border: "1px solid #EBECEE",
-                borderRadius: "5px",
-                marginBottom: "25px",
-              }}
-              type="number"
-              placeholder="Enter amount to deposit"
-              value={depositinput}
-              className="dinput"
-              onChange={(e) => setdepositinput(e.target.value)}
-            />
-            <PayCard
-              master={mastercard}
-              masterAlt="mastercard logo"
-              visa={visa}
-              visaAlt="visa logo"
-            />
-            <PayCard bank={bank} bankAlt="visa logo" />
-          </div>
-        </Modal>
-          }
+              <div style={{ padding: "20px"}}>
+                  <input
+                    style={{
+                      outline: "none",
+                      width: "90%",
+                      backgroundColor: "#F5F6F6",
+                      border: "1px solid #EBECEE",
+                      borderRadius: "5px",
+                      marginBottom: "25px",
+                    }}
+                    type="number"
+                    placeholder="Enter amount to deposit"
+                    value={depositinput}
+                    className="dinput"
+                    onChange={(e) => setdepositinput(e.target.value)}
+                  />
+                  <PayCard
+                    master={mastercard}
+                    masterAlt="mastercard logo"
+                    visa={visa}
+                    visaAlt="visa logo"
+                  />
+                  <PayCard bank={bank} bankAlt="visa logo" />
+                </div>
+              </Modal>
+            }
         
 
           {

@@ -7,20 +7,18 @@ const AccountSummary = ({title, amount, depositClick, withdrawClick}) => {
     return (
         <div className="summary">
             <div className="acc-summary">
-            <div style={{color: '#3B4455', fontSize: '14px', fontWeight: 'normal', marginBottom: '8px'}}> {title} </div>
-            <div style={{color: '#1A2841', fontWeight: 'bold', fontSize: '24px'}}>{amount} NGN</div>
+                <div className="acc-title"> {title} </div>
+                <div className="acc-amt-ngn">{amount} NGN</div>
             </div>
             <div className="couple-buttons">
-            <button onClick={depositClick} 
-                style={{display: 'flex', cursor: 'pointer', maxWidth: '135px', gap: 8, padding: 0, margin: 0, justifyContent: 'center', alignItems: 'center', fontSize: '13px', fontWeight: '600'}}>
-                <div>Deposit</div>
-                <img src={pay} alt="deposit icon" />
-            </button>
-            <button onClick={withdrawClick}
-                style={{display: 'flex', cursor: 'pointer', maxWidth: '135px', backgroundColor: '#F0F5FF', color: '#0059FF', gap: 8, padding: 0, margin: 0, justifyContent: 'center', alignItems: 'center', fontSize: '13px', fontWeight: '600'}}>
-                <div>Withdraw</div>
-            <img src={pay2} alt="withdraw icon" />
-            </button>
+                <button onClick={depositClick} className="acc-btn-dep">
+                    <div>Deposit</div>
+                    <img src={pay} alt="deposit icon" />
+                </button>
+                <button onClick={withdrawClick} className="acc-btn-with">
+                    <div>Withdraw</div>
+                <img src={pay2} alt="withdraw icon" />
+                </button>
             </div>
         </div>
     )
