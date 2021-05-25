@@ -1,0 +1,77 @@
+
+.lee-wrapper {
+    display: flex; 
+    justify-content: space-between; 
+    margin: 10px 0;
+}
+@media only screen and (max-width: 520px) {
+    .lee-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-bottom: 2px solid #eee;
+        /* background-color: red; */
+    }
+}
+.lee-box-one {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+@media only screen and (max-width: 520px) {
+    .lee-box-one {
+        justify-content: flex-start;
+        align-items: center;
+        margin: 5px 20px;
+        /* background-color: yellow; */
+    }
+}
+.lee-name-symbol {
+    width: 100px; 
+    margin-left: 10px; 
+    font-size: 16px;
+}
+.lee-name {
+    color: #1A2841;
+}
+.lee-symbol {
+    color: #B1B4BB;
+}
+.lee-percent {
+    display: flex; 
+    color: #02C076; 
+    font-size: 16px; 
+    line-height: 19px; 
+    opacity: 0.78; 
+    /* margin-right: auto; */
+    justify-content: center; 
+    align-items: center;
+}
+@media only screen and (max-width: 520px) {
+    .lee-percent {
+        justify-content: flex-start;
+        margin: 0 20px;
+    }
+}
+.lee-ngn-amt {
+    display: flex; 
+    gap: 8px; 
+    flex-direction: column; 
+    align-items: flex-end;
+}
+@media only screen and (max-width: 520px) {
+    .lee-ngn-amt {
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0 20px 10px 20px;
+    }
+}
+.lee-val-ngn {
+    color: #1A2841; 
+    font-size: 14px;
+}
+.lee-amt {
+    color: #898F99; 
+    font-size: 14px; 
+    line-height: 17px;
+}

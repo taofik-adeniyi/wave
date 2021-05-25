@@ -27,28 +27,22 @@
 // export default CryptoList
 
 import React from 'react'
-
+import './style.css'
 
 const CryptoList = ({name, symbol, icon, amount, price, percent}) => {
     return (
-        <div style={{display: 'flex', justifyContent: 'space-between', margin: '8px 0 15px 0', borderBottom: '1px solid rgba(0, 0, 0, 0.02)'}}>
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <img src={icon} alt="btc icon" />
-            <div style={{marginLeft: '10px', fontSize: '16px'}}>
-              <span style={{color: '#1A2841'}}>{name}</span>{' '}
-              <span style={{color: '#B1B4BB'}}>{symbol}</span>
+        <div className="crytolist-wrapper">
+            <div className="box-one">
+              <img src={icon} alt="btc icon" />
+              <div className="name-symbol">
+                <span className="thee-name">{name}</span>{' '}
+                <span className="thee-symbol">{symbol}</span>
+              </div>
             </div>
-            </div>
-            <div style={{color: '#1A2841', fontSize: '16px', lineHeight: '17px', 
-            display: 'flex', alignItems: 'center', marginRight: '160px', marginLeft: 'auto'}}>
+            <div className="cry-prize">
               {price}
             </div>
-            <div 
-              style={{
-                display: 'flex', 
-                color: '#02C076', fontSize: '16px', lineHeight: '19px', 
-                opacity: '0.78', justifyContent: 'center', 
-                alignItems: 'center'}}>
+            <div className="cry-percent">
               {percent}
             </div>
           </div>

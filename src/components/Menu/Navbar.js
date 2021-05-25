@@ -33,6 +33,7 @@ const Navbar = () => {
                       </NavLogo>
                       <MobileIcon >
                         {/* <FaBars /> */}
+                          <Icon.Menu  fill={'#fff'} size={28} style={{ color:"#fff"}} /> 
                       </MobileIcon>
                       <NavMenu>
                         <NavItems>

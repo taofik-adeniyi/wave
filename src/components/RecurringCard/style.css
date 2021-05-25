@@ -1,8 +1,23 @@
-.card {
-    width: 25%;
+.our-card {
+    width: 24%;
     background: #FFFFFF;
     border: 1px solid #EBECEE;
     box-sizing: border-box;
     border-radius: 8px;
     padding: 20px 20px;
+}
+@media (max-width: 980px) {
+    .our-card {
+        width: 48%;
+    }
+}
+@media (max-width: 768px) {
+    .our-card {
+        width: 48%;
+    }
+}
+@media (max-width: 548px) {
+    .our-card {
+        width: 100%;
+    }
 }

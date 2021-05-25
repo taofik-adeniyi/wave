@@ -1,11 +1,12 @@
 .buysell-wrapper {
-  width: 100%;
+  width: 98%;
   min-height: 440px;
   justify-content: space-between;
   background: #ffffff;
   box-sizing: border-box;
   box-shadow: 0px 2px 11px rgba(8, 12, 47, 0.08);
   border-radius: 8px;
+  margin-bottom: 30px;
 }
 .drop-container {
   position: absolute;

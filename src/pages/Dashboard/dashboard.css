@@ -1,33 +1,100 @@
 
+
+
+
+.container {
+    /* background-color: lightblue; */
+    box-sizing: border-box;
+    /* padding: 20px 0; */
+    display: grid;
+    gap: 0 10px;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 47% 50%;
+    /* border: 1px solid #EBECEE; */
+    grid-template-areas: 
+    "one two"
+    "three two";
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "one"
+        "two"
+        "three";
+    }
+}
+.one {
+    grid-area: one;
+    /* background-color: red; */
+}
+.two {
+    grid-area: two;
+}
+.three {
+    grid-area: three;
+}
+.four {
+    grid-area: two;
+}
+
+
+
+
+
 .grid-one {
     display: grid;
+    width: 90%;
+    background-color: lawngreen;
     gap: 0 20px;
     grid-template-columns: 60% 40%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
-    "leftover  buysell"
-    "walletlist  buysell";
+    "newbalance  buyorsell"
+    "walletlist  buyorsell";
+}
+
+@media only screen and(max-width: 757px) {
+    .grid-one {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+        "newbalance"
+        "buyorsell"
+        "walletlist";
+    }
 }
 .grid-one-sub-one {
-    grid-area: leftover;
+    grid-area: newbalance;
+}
+@media only screen and(max-width: 757px) {
+    .grid-one-sub-one {
+        width: 100%;
+    }
 }
 .grid-one-sub-two {
-    grid-area: buysell;
+    grid-area: buyorsell;
+}
+@media only screen and(max-width: 757px) {
+    .grid-one-sub-two {
+        width: 100%;
+    }
 }
 .grid-one-sub-three {
     grid-area: walletlist;
 }
-.grid-one-sub-four {
-    grid-area: buysell;
+@media only screen and(max-width: 757px) {
+    .grid-one-sub-three {
+        width: 100%;
+    }
 }
-
-@media only screen and(max-width: 375px) {
-    .grid-one {
-        grid-template-rows: 400px 400px 400px;
-        grid-template-areas:
-        "leftover"
-        "buysell"
-        "walletlist";
+.grid-one-sub-four {
+    grid-area: buyorsell;
+}
+@media only screen and(max-width: 757px) {
+    .grid-one-sub-four {
+        width: 100%;
     }
 }
 
@@ -48,12 +115,13 @@
     grid-area: crypto;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 768px) {
     .grid-two {
-        grid-template-areas: 
-        "recent"
-        "crypto"
-        ;
+        grid-template-columns: 100%;
         grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "crypto"
+        "recent"
+        ;
     }
 }

@@ -14,3 +14,96 @@ box-sizing: border-box;
 box-shadow: 0px 2px 4px rgba(8, 12, 47, 0.08);
 border-radius: 8px;
 }
+@media only screen and  (max-width: 768px) {
+    .recent-crypto-wrapper{
+        margin-bottom: 50px;
+    }
+}
+.row-one {
+    padding-top: 20px; 
+    padding-left: 20px; 
+    padding-bottom: 20px; 
+    color: #1A2841; 
+    font-size: 14px;
+    font-weight: 600;
+}
+.row-two {
+    background: #F5F6F6; 
+    justify-content: space-between; 
+    padding: 10px 5px; letter-spacing: 0.2em; 
+    display: flex; 
+    color: #1A2841; 
+    font-weight: 600; 
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.lister-wrap {
+    padding: 0 20px; 
+    min-height: 215px;
+    flex-wrap: wrap;
+}
+.name {
+    padding-left: 20px
+}
+.time {
+    padding-right: 20px
+}
+
+
+/* for CryptList.js */
+.crytolist-wrapper {
+    display: flex; 
+    justify-content: space-between; 
+    margin: 8px 0 15px 0; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+}
+.box-one {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.name-symbol {
+    margin-left: 10px; 
+    font-size: 16px
+}
+@media only screen and (max-width: 520px){
+    .name-symbol {
+        font-size: 13px;
+    }
+}
+.thee-name {
+    color: #1A2841;
+}
+.thee-symbol {
+    color: #B1B4BB;
+}
+.cry-prize {
+    color: #1A2841; 
+    font-size: 16px; 
+    line-height: 17px;
+    display: flex; 
+    align-items: center; 
+    /* margin-right: 160px; 
+    margin-left: auto; */
+}
+@media only screen and (max-width: 520px){
+    .cry-prize {
+        font-size: 13px;
+        margin: 0;
+    }
+}
+.cry-percent {
+    display: flex;
+    color: #02C076; 
+    font-size: 16px; 
+    line-height: 19px; 
+    opacity: 0.78; 
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (max-width: 520px){
+    .cry-percent {
+        font-size: 13px;
+        margin: 0;
+    }
+}

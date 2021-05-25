@@ -5,4 +5,12 @@
     /* font-size: 22px; */
     font-family: Poppins;
     font-weight: 600;
+    /* margin-top: 130px; */
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+    .welcome-text {
+        margin-top: 130px;
+    }
 }

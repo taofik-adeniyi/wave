@@ -29,6 +29,7 @@ import CreateRecurringBuy from "../../components/CreateRecurringBuy";
 import ConfirmRecurringBuy from "../../components/ConfirmRecurringBuy";
 import RecurringCreatedSuccess from "../../components/RecurringCreatedSuccess";
 import redwithdrawal from "../../assets/icons/red-withdrawal.png";
+import RecurringList from "../../components/RecurringList";
 
 
 const Wallet = () => {
@@ -174,23 +175,7 @@ const Wallet = () => {
         </div>
       )}
       {step === 1 && (
-        <div className="step-one-wrapper">
-          <div className="recurring">
-            <div>
-              <div style={{fontSize: '24px', fontWeight: 600, color: '#1A2841'}}>Recurring Buy</div>
-            </div>
-            <div>
-              <button className="btn-for-recurr" onClick={handleRecurringBuy}>Create a recurring buy</button>
-            </div>
-          </div>
-
-          <div className="card-wrapper">
-            <RecurringCard logo={btc} />
-            <RecurringCard logo={ethereum} />
-            <RecurringCard logo={tether} />
-            <RecurringCard logo={naira} />
-          </div>
-        </div>
+        <RecurringList handleRecurringBuy={handleRecurringBuy} />
       )}
       {step === 2 && (
         

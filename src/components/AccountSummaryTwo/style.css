@@ -1,0 +1,107 @@
+.th-summary {
+    display: flex;
+    justify-content: space-between;
+    width: 100% !important;
+    /* background-color: red !important; */
+    min-height: 200px;
+    padding: 10% 5%;
+    background: #FFFFFF !important;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 11px rgba(8, 12, 47, 0.08);
+    border-radius: 8px;
+}
+@media only screen and (max-width: 870px) {
+    .th-summary {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .th-summary {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+.th-acc-summary {
+    display: flex !important;
+    flex-direction: column !important;
+    /* background-color: red; */
+    /* justify-content: flex-start !important; */
+}
+@media only screen and (max-width: 768px) {
+    .th-acc-summary {
+        display: flex;
+        flex-direction: column !important;
+        margin-top: 20px;
+    }
+}
+.th-couple-buttons {
+    display: flex;
+    gap: 10px;
+    /* background-color: lightblue; */
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 870px) {
+    .thee-couple-buttons {
+        justify-content: center;
+        margin-top: 30px;
+        justify-content: space-between;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .thee-couple-buttons {
+        justify-content: center;
+        margin-top: 50px;
+        justify-content: space-between;
+    }
+}
+
+.bal-title {
+    color: #3B4455; 
+    font-size: 14px; 
+    font-weight: normal; 
+    margin-bottom: 8px;
+}
+@media only screen and (max-width: 1060px) {
+    .bal-title {
+        display: block;
+    }
+}
+.amount-ngn {
+    color: #1A2841; 
+    font-weight: bold;
+    font-size: 24px;
+}
+@media only screen and (max-width: 1060px) {
+    .amount-ngn {
+        font-size: 20px;
+    }
+}
+
+.deposit-btn {
+        display: flex; 
+        cursor: pointer; 
+        max-width: 135px;
+         gap: 8; 
+         padding: 0; 
+         margin: 0; 
+         justify-content: center; 
+         align-items: center; 
+         font-size: 13px; 
+         font-weight: 600;
+}
+.withdraw-btn {
+    display: flex; 
+    cursor: pointer; 
+    max-width: 135px; 
+    background-color: #F0F5FF; 
+    color: #0059FF; 
+    gap: 8; 
+    padding: 0; 
+    margin: 0; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 13px; 
+    font-weight: 600;
+}

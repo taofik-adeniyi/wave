@@ -1,6 +1,6 @@
 import React from 'react'
 import List from './List'
-import './walletlist.css'
+import './style.css'
 import btc from '../../assets/icons/btc.png'
 import ethereum from '../../assets/icons/ethereum.png'
 import tether from '../../assets/icons/tether.png'
@@ -8,8 +8,8 @@ import SeeMore from '../SeeMore'
 
 const WalletList = () => {
     return (
-        <div className="list-wrapper">
-          <div className="row-one">
+        <div className="wa-wrapper">
+          <div className="wa-row-one">
             <div style={{color: '#1A2841', fontWeight: '600', fontSize: '14px'}}>Wallets</div>
               <SeeMore />
           </div>

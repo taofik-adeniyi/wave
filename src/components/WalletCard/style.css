@@ -6,6 +6,12 @@
     border: 1px solid #EEEDF2;
     padding: 10px 15px;
 }
+@media only screen and (max-width: 1400px) {
+    .wallet-card-wrapper {
+        width: 100%;
+        margin: 10px auto;
+    }
+}
 @media only screen and (max-width: 768px) {
     .wallet-card-wrapper {
         width: 100%;
