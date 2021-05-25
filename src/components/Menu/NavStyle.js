@@ -38,6 +38,10 @@ z-index:1;
 padding:0 24px;
  max-width:1400px; 
 
+@media (max-width: 768px) {
+  justify-content: flex-start;
+}
+
 `
 
 export const NavbarWrapper = styled.div`
@@ -55,6 +59,9 @@ color:#fff;
 display:flex;
 align-items:center;
 
+@media (max-width: 768px) {
+  display: none;
+}
 @media (max-width: 480px){
     width:120px;
 }
@@ -73,13 +80,38 @@ export const ImgLogo = styled.img`
   @media (max-width: 768px){
     display:block; 
     position:absolute;
-    top:0;
-    right:0;
+    // top:0;
+    // right:0;
     cursor:pointer;
     font-size:1.5rem;
-    transform: translate(-100%, 60%);
+    // transform: translate(-100%, 60%);
     color:#fff;
   }
+ `
+ export const MobileDropDown = styled.div`
+  display: none;
+  
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: column;
+    position absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #0a1f44;
+    opacity: 0.9;
+    color: #fff;
+    // trans: ${({mobile})=>mobile ? 'all .2s ease-in-out;' : ''}
+    
+  }
+ `
+ export const ItemWrapper = styled.div`
+    position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-tems: center
  `
 
 export const NavMenu = styled.ul`
@@ -134,6 +166,30 @@ transition: all .2s ease-in-out;
 }
 
 
+`
+export const Item = styled(LinkR)`
+  box-sizing: border-box; 
+  text-align: center; 
+  width: 100%; 
+  padding: 20px;
+  color: #fff;
+  border-bottom: 1px solid #999;
+  &:hover{
+    color: blue;
+  }
+  // &:focus{
+  //   color: red;
+  // }
+`
+export const Body = styled.div`
+  display: flex; 
+  height: 80px; 
+  font-weight: bold; 
+  color: #fff; 
+  width: 100%;
+  justify-content: center;
+  align-items: center; 
+  background-color: #1A2841;
 `
 
 export const NavBtn = styled.nav`
@@ -213,4 +269,18 @@ transition: all .2s ease-in-out;
 }
 
 
+`
+export const Mobile = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    margin-left: auto;
+  }
+`
+export const Divider = styled.div`
+  width: 1px; 
+  height: 40px;
+  margin-right: 10px; 
+  position: relative;
+  background-color: #999;
 `

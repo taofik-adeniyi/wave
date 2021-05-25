@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react'
 // import {FaBars} from 'react-icons/fa'
 import * as Icon from 'react-feather'
 
-import {Nav, NavbarContainer, NavLogo,NavbarWrapper, MobileIcon, NavMenu, NavItems,NavLinks,IconWrapper, NavBtn, ProfileIcon, NavBtnLinkL} from './NavStyle'
+import {ItemWrapper, Body, Item, Nav, NavbarContainer, NavLogo,NavbarWrapper, MobileIcon, MobileDropDown, Mobile, Divider, NavMenu, NavItems,NavLinks,IconWrapper, NavBtn, ProfileIcon, NavBtnLinkL} from './NavStyle'
 
 const Navbar = () => {
     const[scrollNav, setScrollNav] = useState(false)
+    const[mobile, setMobile] = useState(false)
 
 
   
@@ -15,6 +16,10 @@ const Navbar = () => {
       }else{
         setScrollNav(false)
       }
+    }
+
+    const openMobile = () => {
+      setMobile(!mobile)
     }
   
     useEffect(() => {
@@ -27,14 +32,44 @@ const Navbar = () => {
               <>
              <Nav scrollNav={scrollNav}>
               <NavbarContainer>
+                  <MobileIcon onClick={openMobile}>
+                      <Icon.Menu  fill={'#fff'} size={28} style={{ color:"#fff"}} /> 
+                  </MobileIcon>
+                  <Mobile>
+                  <IconWrapper> 
+                    <Icon.Bell  fill={'#fff'} size={18} style={{ color:"#fff"}} />
+                  </IconWrapper>
+                  <Divider />
+                  <ProfileIcon> JD</ProfileIcon>
+                  </Mobile>
+                  
+                      {
+                        mobile && 
+                        <MobileDropDown mobile={mobile}>
+                          <Body>Waavewallet</Body>
+                        <ItemWrapper>
+                          <Item to="/dashboard">Home</Item>
+                          <Item to="/wallet">Wallet</Item>
+                          <Item to="/transaction">Transactions</Item>
+                          <Item to="/investment">Investments</Item>
+                        </ItemWrapper>
+                        </MobileDropDown>
+                      }
                       <NavbarWrapper>
                       <NavLogo to="/">
                          Waavewallet
                       </NavLogo>
-                      <MobileIcon >
-                        {/* <FaBars /> */}
+                      {/* <MobileIcon onClick={openMobile}>
                           <Icon.Menu  fill={'#fff'} size={28} style={{ color:"#fff"}} /> 
-                      </MobileIcon>
+                      </MobileIcon> */}
+                      
+                      {/* {
+                        mobile && 
+                        <MobileDropDown>
+                          <div style={{backgroundColor: 'yellow'}}>uii</div>
+                          <h3>Taofik</h3>
+                        </MobileDropDown>
+                      } */}
                       <NavMenu>
                         <NavItems>
                             <NavLinks to="/dashboard">Home</NavLinks>
@@ -45,13 +80,18 @@ const Navbar = () => {
                         </NavItems>
                       </NavMenu>
                       </NavbarWrapper>
+
                       <NavBtn>
-                       <IconWrapper> <Icon.Bell  fill={'#fff'} size={18} style={{ color:"#fff"}} />
+                       <IconWrapper> 
+                         <Icon.Bell  fill={'#fff'} size={18} style={{ color:"#fff"}} />
                       </IconWrapper>
-                      <NavBtnLinkL to="/">  <ProfileIcon> JD</ProfileIcon> John Doe</NavBtnLinkL>
-                        
-                          
+                      
+                      <NavBtnLinkL to="/">  
+                        <ProfileIcon> JD</ProfileIcon>
+                        John Doe
+                      </NavBtnLinkL>
                       </NavBtn>
+
                   </NavbarContainer>
                  
               </Nav> 
