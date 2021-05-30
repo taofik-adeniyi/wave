@@ -10,10 +10,16 @@ import tether from "../../assets/icons/tether.png";
 import cancel from "../../assets/icons/cancel.png";
 import TransactionList from "../../components/TransactionList";
 import Modal from "../../components/Modal";
+import BootModal from "../../components/BootModal";
 import NairaTransactionDetails from "../../components/NairaTransactionDetails";
 import BtcTransactionDetails from "../../components/BtcTransactionDetails";
 import WithdrawalTransactionDetails from "../../components/WithdrawalTransactionDetails";
 import DateFilter from "../../components/DateFilter";
+
+import alldata from './data.js'
+import nairadata from './ddata.js'
+import bitcoindata from './bdata.js'
+import NoTransaction from "../../components/NoTransaction";
 
 
 const Transaction = () => {
@@ -52,160 +58,60 @@ const Transaction = () => {
           <Tab className="menu">Tether</Tab>
         </TabList>
         
-        <TabPanel >
-        <div onClick={showdeposit}>
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Deposit"
-          amount="900,908"
-          symb="NGN"
-        />
-        </div>
-        <div onClick={showcrypto}>
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Bought BTC"
-          amount="100,908,017"
-          symb="BTC"
-          curr="0.047 BTC"
-        />
-        </div>
-        <div onClick={showcrypto}>
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Bought USDT"
-          amount="71,908"
-          symb="USDT"
-          curr="567 USDT"
-        />
-        </div>
-        <div onClick={showcrypto}>
-
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Ethereum"
-          amount="900,908"
-          symb="NGN"
-          curr="1.43 ETH"
-        />
-        </div>
-        <div onClick={showwithdrawal}>
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Withdrawal"
-          amount="88,908"
-          symb="NGN"
-        />
-        </div>
-        </TabPanel>
         <TabPanel>
-        <div onClick={showdeposit}>
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Deposit"
-          amount="900,908"
-          symb="NGN"
-        />
-        </div>
-        <div onClick={showwithdrawal}>
-        <TransactionList
-          icon={deposit}
-          tag="failed"
-          date="14, jan, 2020"
-          type="Withdraw"
-          amount="900,908"
-          symb="NGN"
-        />
-        </div>
-        <div onClick={showdeposit}>
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Deposit"
-          amount="900,908"
-          symb="NGN"
-        />
-        </div>
+          {
+            alldata.map(data => (
+            <div onClick={showdeposit} key={data.id}>
+              <TransactionList  {...data} icon={deposit} />
+            </div>
+            ))
+          }
         </TabPanel>
+
+        <TabPanel>
+        {
+          nairadata.map(naira => (
+          <div onClick={showdeposit} key={naira.id}>
+            <TransactionList  {...naira} icon={deposit} />
+          </div>
+          ))
+        }
+        </TabPanel>
+       
+        <TabPanel>
+          {
+            bitcoindata.map(bitcoin => (
+              <div onClick={showcrypto} key={bitcoin.id}>
+                <TransactionList  {...bitcoin} icon={deposit} />
+              </div>
+              ))
+          }
+        </TabPanel>
+
         <TabPanel>
           <div onClick={showcrypto}>
-
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Bought BTC"
-          amount="900,908"
-          symb="BTC"
-          curr="0.047 BTC"
-        />
-          </div>
-          <div onClick={showcrypto}>
-
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Bought BTC"
-          amount="900,908"
-          symb="BTC"
-          curr="0.047 BTC"
-        />
+            <TransactionList
+              icon={deposit}
+              tag="Successful"
+              date="14, jan, 2020"
+              type="Ethereum"
+              amount="900,908"
+              symb="NGN"
+              curr="1.43 ETH"
+            />
           </div>
         </TabPanel>
         <TabPanel>
-          <div onClick={showcrypto}>
-        <TransactionList
-          icon={deposit}
-          tag="Successful"
-          date="14, jan, 2020"
-          type="Ethereum"
-          amount="900,908"
-          symb="NGN"
-          curr="1.43 ETH"
-        />
-          </div>
-        </TabPanel>
-        <TabPanel>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: "400px",
-          }}
-        >
-          <div
-            style={{
-              fontFamily: "Proxima Nova",
-              fontSize: "16px",
-              color: "#898F99",
-            }}
-          >
-            You haven't done any transaction on Tether yet
-          </div>
-          <button style={{ marginTop: "20px", cursor: "pointer", fontSize: '14px', fontWeight: "600", fontFamily: "SF Pro Text"}}>Wallet</button>
-        </div>
+          <NoTransaction />
         </TabPanel>
         </Tabs>
       </div>
+
+      
       {/* 1 significe fiat deposit */}
       {step === 1 && (
-        <Modal
+        <BootModal
+        show={true}
           cancel={cancel}
           title="Transaction Details"
           closemodal={closemodal}
@@ -217,11 +123,12 @@ const Transaction = () => {
             result="Succesful"
             amount="900,908"
             symb="NGN" />
-        </Modal>
+        </BootModal>
       )}
       {/* 2 significe crypto transaction */}
       {step === 2 && (
-        <Modal
+        <BootModal
+        show={true}
           cancel={cancel}
           title="Transaction Details"
           closemodal={closemodal}
@@ -236,11 +143,12 @@ const Transaction = () => {
             crypto
             fiatamount="900,908"
           />
-        </Modal>
+        </BootModal>
       )}
       {/* 3 significe fiat withdrawal */}
       {step === 3 && (
-        <Modal
+        <BootModal
+        show={true}
           cancel={cancel}
           title="Transaction Details"
           closemodal={closemodal}
@@ -252,7 +160,7 @@ const Transaction = () => {
           amount="900,908"
           symb="NGN"
           withdrawal />
-        </Modal>
+        </BootModal>
       )}
     </div>
   );

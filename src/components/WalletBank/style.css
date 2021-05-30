@@ -1,21 +1,69 @@
 .first-compo {
-    border: 1px solid #D8DADD;
-    border-radius: 8px;
-    background: #FFFFFF;
-    display: flex; width: 100%; justify-content: space-between;
+  border: 1px solid #d8dadd;
+  border-radius: 8px;
+  background: #ffffff;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.compo-one {
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-around;
+  align-items: center;
+}
+.compo-one-chd {
+  margin-left: 20px;
+}
+.img-coin {
+  width: 55px;
+}
+.auto {
+  margin-left: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 14px; 
+  padding-bottom: 5px;
+  color: #3B4455;
+}
+.digit-coin {
+  color: #1A2841; 
+  padding-bottom: 5px; 
+  font-weight: bold; 
+  font-size: 24px;
+}
+.digit {
+  font-size: 14px;
+  color: #898f99;
+}
+.d-btn {
+  display: flex;
+    margin: 20px 0; 
+    padding: 0 20px 0 0; 
+    justify-content: space-between;
+}
+.snd-txt {
+  padding-top: 5px
 }
 .boton {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f0f5ff;
   border-radius: 8px;
   padding: 20px 25px;
-  color: #0059FF;
+  color: #0059ff;
   font-size: 13px;
+  cursor: pointer;
+}
+.bgg {
+  background-color: #f0f5ff;
 }
 .not-checked {
-  background: transparent;
-  color: #898F99;
+  color: #898f99;
 }

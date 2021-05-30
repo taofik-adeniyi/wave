@@ -102,8 +102,8 @@ export const ImgLogo = styled.img`
     background-color: #0a1f44;
     opacity: 0.9;
     color: #fff;
-    // trans: ${({mobile})=>mobile ? 'all .2s ease-in-out;' : ''}
-    
+    // transition: ${({mobile})=>mobile ? 'transform ease-out 150ms;' : ''}
+    // transition: ${({mobile})=>mobile ? 'left ease-out 5ms' : '' }
   }
  `
  export const ItemWrapper = styled.div`

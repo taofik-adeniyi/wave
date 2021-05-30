@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import "./style.css";
 import WalletBank from "../WalletBank";
@@ -8,20 +8,31 @@ import SenderTwo from "../Sender/SenderTwo";
 import RecentTransactions from "../RecentTransactions";
 
 const ToBuy = (props) => {
-  const { handleRecurringBuy } = props
+  const { handleRecurringBuy } = props;
   const [buy, setbuy] = useState(false);
   const [sendcoin, setsendcoin] = useState(true);
   const [coinreceive, setcoinreceive] = useState(false);
+  const [toggle, setToggle] = useState(0)
 
   const toggleReceive = () => {
-    setsendcoin(!sendcoin)
-    setcoinreceive(!coinreceive)
-  }
+    setsendcoin(!sendcoin);
+    setcoinreceive(!coinreceive);
+  };
   const toggleSend = () => {
-    setsendcoin('sendcoin')
-    setcoinreceive(!coinreceive)
-  }
+    setsendcoin("sendcoin");
+    setcoinreceive(!coinreceive);
+  };
 
+  const handleSend = () => {
+    setToggle(0)
+    setsendcoin("sendcoin");
+    setcoinreceive(!coinreceive);
+  }
+  const handleReceive = () => {
+    setToggle(1)
+    setsendcoin(!sendcoin);
+    setcoinreceive(!coinreceive);
+  }
   return (
     <>
       {/* <div className="step-two-wrapper-grid">
@@ -48,30 +59,49 @@ const ToBuy = (props) => {
       <div className="container">
         <div className="one">
           <div className="step-two-wrapper-grid-one">
-          <WalletBank toggleReceive={toggleReceive} toggleSend={toggleSend} sendcoin={sendcoin} coinreceive={coinreceive} />
-        </div>
+            <WalletBank
+              handleReceive={handleReceive}
+              handleSend={handleSend}
+              toggle={toggle}
+              toggleReceive={toggleReceive}
+              toggleSend={toggleSend}
+              sendcoin={sendcoin}
+              coinreceive={coinreceive}
+            />
+          </div>
         </div>
         <div className="two">
-          <div className="step-two-wrapper-grid-two the-buy-sell" >
-          <BuySell>
-            <div>Activate Recurring Buy</div>
-          </BuySell>
-        </div>
+          <div className="step-two-wrapper-grid-two the-buy-sell">
+            <BuySell>
+              <div>Activate Recurring Buy</div>
+            </BuySell>
+          </div>
         </div>
         <div className="three">
           <div className="step-three-wrapper-grid-three">
-          <Sender coinreceive={coinreceive} sendcoin={sendcoin} buy={buy} setbuy={setbuy} />
-          {/* <SenderTwo /> */}
-        </div>
+            <Sender
+              coinreceive={coinreceive}
+              sendcoin={sendcoin}
+              buy={buy}
+              setbuy={setbuy}
+            />
+            {/* <SenderTwo /> */}
+          </div>
         </div>
         <div className="four">
-        <div className="step-four-wrapper-grid-four"  className="step-now">
-          <RecentTransactions smallheight>
-            <div style={{display: "flex", alignItems: 'center', justifyContent: 'center', }}>
-              <div>You have no activity yet</div>
-            </div>
-          </RecentTransactions>
-        </div>
+          <div className="step-four-wrapper-grid-four" className="step-now">
+            <RecentTransactions smallheight>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <div>You have no activity yet</div>
+              </div>
+            </RecentTransactions>
+          </div>
         </div>
       </div>
     </>
