@@ -35,19 +35,25 @@
     grid-area: four;
 }
 .tobuy-step-now {
-    width: 94%; 
+    width: 100%;
     margin-top: 290px;
 }
 @media only screen and (max-width: 768px) {
+    .tobuy-step-now {
+        width: 100%;
+        margin-top: 40px;
+    }   
+}
+    @media only screen and (max-width: 768px) {
     .step-now {
         margin-top: 50px;
     }
 }
-.the-buy-sell {
-    width: 94%;
+.tobuy-sell {
+    width: 100%;
 }
 @media only screen and (max-width: 768px) {
-    .the-buy-sell {
+    .tobuy-sell {
         margin-top: 20px;
     }
 }
