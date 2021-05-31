@@ -1,4 +1,4 @@
-.container {
+.tobuy-container {
     /* background-color: lightblue; */
     box-sizing: border-box;
     display: grid;
@@ -10,7 +10,7 @@
     "three four";
 }
 @media only screen and (max-width: 768px) {
-    .container {
+    .tobuy-container {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-template-areas: 
@@ -21,20 +21,20 @@
         ;
     }
 }
-.one {
+.tobuy-one {
     grid-area: one;
     /* background-color: red; */
 }
-.two {
+.tobuy-two {
     grid-area: two;
 }
-.three {
+.tobuy-three {
     grid-area: three;
 }
-.four {
+.tobuy-four {
     grid-area: four;
 }
-.step-now {
+.tobuy-step-now {
     width: 94%; 
     margin-top: 290px;
 }

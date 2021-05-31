@@ -8,9 +8,9 @@ import SeeMore from '../SeeMore'
 
 const WalletList = () => {
     return (
-        <div className="wa-wrapper">
-          <div className="wa-row-one">
-            <div style={{color: '#1A2841', fontWeight: '600', fontSize: '14px'}}>Wallets</div>
+        <div className="wallet-list-wrapper">
+          <div className="wallet-row-one">
+            <div className="wallet-title">Wallets</div>
               <SeeMore />
           </div>
           <List icon={btc} value="12,066,707" percent="+2.76%" name="Bitcoin" amount="1 BTC" symbol="BTC" />

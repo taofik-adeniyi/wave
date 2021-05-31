@@ -15,24 +15,12 @@ const Dashboard = () => {
       <Menu />
       <MainWrapper>
         <WelcomeText username="John" />
-        {/* <div className="grid-container"></div> */}
-        {/* <div className="grid-one">
-          <div className="grid-one-sub-one">
-            <AccountSummaryTwo title={'Your Naira Balance'} amount={'2,000,000'} />
-          </div>
-          <div className="grid-one-sub-two">
-            <BuySell />
-          </div>
-
-          <div className="grid-one-sub-three">
-            <WalletList />
-          </div>
-          <div className="grid-one-sub-four">
-          </div>
-        </div> */}
-        <div className="container">
+        <div className="main-container">
           <div className="one">
-            <AccountSummaryTwo title={'Your Naira Balance'} amount={'2,000,000'} />
+            <AccountSummaryTwo 
+              title={'Your Naira Balance'} 
+              amount={'2,000,000'} 
+            />
           </div>
           <div className="two">
             <BuySell />
@@ -40,7 +28,6 @@ const Dashboard = () => {
           <div className="three">
             <WalletList />
           </div>
-          {/* <div className="four">four</div> */}
         </div>
 
         <div className="grid-two">

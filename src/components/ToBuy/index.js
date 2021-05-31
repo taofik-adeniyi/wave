@@ -56,9 +56,9 @@ const ToBuy = (props) => {
           </RecentTransactions>
         </div>
       </div> */}
-      <div className="container">
-        <div className="one">
-          <div className="step-two-wrapper-grid-one">
+      <div className="tobuy-container">
+        <div className="tobuy-one">
+          <div className="tobuy-step-two-wrapper-grid-one">
             <WalletBank
               handleReceive={handleReceive}
               handleSend={handleSend}
@@ -70,15 +70,15 @@ const ToBuy = (props) => {
             />
           </div>
         </div>
-        <div className="two">
-          <div className="step-two-wrapper-grid-two the-buy-sell">
+        <div className="tobuy-two">
+          <div className="the-buy-sell">
             <BuySell>
               <div>Activate Recurring Buy</div>
             </BuySell>
           </div>
         </div>
-        <div className="three">
-          <div className="step-three-wrapper-grid-three">
+        <div className="tobuy-three">
+          <div>
             <Sender
               coinreceive={coinreceive}
               sendcoin={sendcoin}
@@ -88,8 +88,8 @@ const ToBuy = (props) => {
             {/* <SenderTwo /> */}
           </div>
         </div>
-        <div className="four">
-          <div className="step-four-wrapper-grid-four" className="step-now">
+        <div className="tobuy-four">
+          <div className="tobuy-step-now">
             <RecentTransactions smallheight>
               <div
                 style={{

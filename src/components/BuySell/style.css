@@ -1,8 +1,9 @@
 .buysell-wrapper {
   width: 98%;
-  min-height: 440px;
+  /* min-height: 440px; */
+  /* height: 550px; */
   justify-content: space-between;
-  background: #ffffff;
+  /* background: red; */
   box-sizing: border-box;
   box-shadow: 0px 2px 11px rgba(8, 12, 47, 0.08);
   border-radius: 8px;
@@ -88,7 +89,7 @@ sup + div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50px;
+  width: 80px;
   font-weight: 600;
   font-size: 13px;
   color: #0059ff;
@@ -152,16 +153,60 @@ sup + div {
   font-size: 16px;
   padding: 15px 0 15px 20px;
 }
-.okaytwo {
+.btn-sell {
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 0 auto;
+  margin: 0 10% 20px 10%;
   width: 80%;
-  border-radius: 8px;
-  font-family: Proxima Nova;
-  background-color: #F5F6F6;
   color: #D8DADD;
-  font-size: 16px;
-  padding: 12px 10px;
+}
+
+.confirm-wrapper {
+    padding: 0 20px
+}
+.confirm-btn {
+  width: 100%; 
+  cursor: pointer; 
+  margin-bottom: 20px;
+}
+.confirm-btc {
+    font-size: 27px;
+    font-weight: bold;
+    color: #1A2841;
+    margin-bottom: 40px;
+}
+.confirm-title {
+    font-size: 16px;
+    color: #898F99;
+    margin-bottom: 35px;
+}
+
+.done-wrapper {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.done-row-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.passed-title {
+    font-size: 18px;
+    color: #1A2841;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.passed {
+    font-size: 16px;
+    color: #626977;
+    margin-bottom: 50px;
+}
+.btn-done {
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

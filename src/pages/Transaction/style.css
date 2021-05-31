@@ -4,8 +4,8 @@
 }
 @media only screen and (max-width: 768px) {
    .transaction-cover {
-      width: 95%;
-      margin: 130px auto;
+      width: 90%;
+      margin: 110px auto;
    }
 }
 .row-card-one {
