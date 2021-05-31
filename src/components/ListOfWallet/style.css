@@ -54,10 +54,12 @@
 }
 .card-wrapper {
     width: 100%;
-    margin-top: 30px;
+    /* background-color: red; */
     display: flex;
     flex-wrap: wrap;
-    gap: 25px 10px;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+    margin-bottom: 100px;
 }
 @media only screen and (max-width: 768px) {
   .card-wrapper {
